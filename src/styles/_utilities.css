@@ -1,0 +1,29 @@
+@layer utilities {
+  .a11y-hidden {
+    overflow: hidden;
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: circle(0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    white-space: nowrap;
+  }
+
+  .text-stroke {
+    text-shadow: 
+      2px 0 black,    /* 오른쪽 */
+      -2px 0 black,   /* 왼쪽 */
+      0 2px black,    /* 아래쪽 */
+      0 -2px black,   /* 위쪽 */
+      2px 2px black,  /* 오른쪽 아래 */
+      2px -2px black, /* 오른쪽 위 */
+      -2px 2px black, /* 왼쪽 아래 */
+      -2px -2px black; /* 왼쪽 위 */
+    color: white; /* 텍스트 내부 색상 */
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}

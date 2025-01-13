@@ -1,3 +1,6 @@
+@import './_reset.css';
+@import './_utilities.css';
+@import './_base.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
