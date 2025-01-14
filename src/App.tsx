@@ -7,6 +7,7 @@ import Skills from './sections/Skills.tsx';
 import ContactMe from './sections/ContactMe.tsx';
 import Project from './sections/Project.tsx';
 import Banner from './sections/Banner.tsx';
+import Experiences from './sections/Experiences.tsx';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       <div className="">
         <Banner />
         <AboutMe />
+        <Experiences />
         <Skills />
         <Project />
         <ContactMe />
