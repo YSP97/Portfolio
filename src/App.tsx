@@ -15,10 +15,10 @@ export default function App() {
       <div className="fixed w-full top-0 z-50 font-sora">
         <Header />
       </div>
-      <div className="pt-[90px]">
+      <div className="">
         <Banner />
-        <Skills />
         <AboutMe />
+        <Skills />
         <Project />
         <ContactMe />
       </div>
