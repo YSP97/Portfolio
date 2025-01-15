@@ -26,7 +26,7 @@ export default function Banner() {
           </p>
           <Contacts />
         </div>
-        <img src="/assets/girl.svg" alt="" className="w-[500px]" />
+        <img src="/assets/girl.svg" alt="" className="w-[630px]" />
       </div>
     </section>
   );
