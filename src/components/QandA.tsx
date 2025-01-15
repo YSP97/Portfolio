@@ -7,7 +7,7 @@ export default function QandA() {
           <span className="font-semibold">개발자</span>가 되려는 이유?
         </span>
       </div>
-      <div className="flex items-start gap-5 pl-32">
+      <div className="flex items-start gap-5 pl-24">
         <span className="text-[30px] font-semibold font-sora">A. </span>
         <p className="text-zinc-500 mt-1">
           I'm a passionate, self-proclaimed designer who specializes in full
