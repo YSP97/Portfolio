@@ -17,15 +17,17 @@ export default function Header() {
           Contact me
         </Link>
       </div>
-      <button
-        aria-label="이력서 다운로드"
+      <a
+        href="/assets/resume.hwp"
+        download="resume.hwp"
         className="flex flex-row items-center gap-2 bg-black text-white rounded py-2 px-4 hover:bg-zinc-600"
+        aria-label="이력서 다운로드"
       >
         <div className="font-semibold">Resume</div>
         <svg className="w-[15px] h-[15px]">
           <use href="/sprite.svg#download" />
         </svg>
-      </button>
+      </a>
     </div>
   );
 }
