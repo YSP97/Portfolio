@@ -4,7 +4,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="flex flex-col h-screen font-sora items-center py-[104px]"
+      className="flex flex-col font-sora items-center py-[104px]"
     >
       <h1 className="text-[48px]">
         My <span className="font-extrabold">Skills</span>

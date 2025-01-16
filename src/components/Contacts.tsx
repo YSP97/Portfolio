@@ -8,7 +8,7 @@ export default function Contacts() {
         icon={'notion'}
         link="https://opaque-parade-b25.notion.site/c7e2c7c4929442b986ef2e1e3d668b8e?pvs=74"
       />
-      <ContactButton icon={'email'} />
+      <ContactButton icon={'email'} link="mailto:pus9717@gmail.com" />
       <ContactButton icon={'phone'} />
     </div>
   );
