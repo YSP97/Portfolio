@@ -1,4 +1,5 @@
 import QandA from '../components/QandA.tsx';
+import { aboutMeData } from '../utils/abouMeData.ts';
 
 export default function AboutMe() {
   return (
@@ -16,8 +17,9 @@ export default function AboutMe() {
           className="w-full max-w-[400px] h-fit shadow-sm"
         />
         <div className="flex flex-col gap-5">
-          <QandA />
-          <QandA />
+          {aboutMeData.map((item) => (
+            <QandA data={item} />
+          ))}
         </div>
       </div>
     </section>

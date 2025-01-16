@@ -10,6 +10,8 @@ import Banner from './sections/Banner.tsx';
 import Experiences from './sections/Experiences.tsx';
 import MoveUp from './components/MoveUp.tsx';
 import Modal from './components/Modal.tsx';
+import ContactModal from './components/ContactModal.tsx';
+import Footer from './components/Footer.tsx';
 
 export default function App() {
   return (
@@ -24,14 +26,17 @@ export default function App() {
         <Experiences />
         <Skills />
         <Projects />
-        <ContactMe />
+        {/* <ContactMe /> */}
       </div>
       <div className="fixed bottom-6 right-6">
         <MoveUp />
       </div>
       <div className="fixed z-50">
         <Modal />
+        <ContactModal />
       </div>
+
+      <Footer />
     </div>
   );
 }
