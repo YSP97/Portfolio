@@ -26,7 +26,7 @@ export default function App() {
         <Experiences />
         <Skills />
         <Projects />
-        {/* <ContactMe /> */}
+        <ContactMe />
       </div>
       <div className="fixed bottom-6 right-6">
         <MoveUp />

@@ -1,7 +1,29 @@
+import { useEffect, useState } from 'react';
 import QandA from '../components/QandA.tsx';
-import { aboutMeData } from '../utils/abouMeData.ts';
+import supabase from '../utils/supabase.ts';
 
 export default function AboutMe() {
+  const [aboutMeData, setAboutMeData] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchAboutMeData = async () => {
+      try {
+        let { data: aboutMe, error } = await supabase
+          .from('aboutMe')
+          .select('*');
+
+        if (error) throw error;
+        setAboutMeData(aboutMe);
+      } catch (err) {
+        console.error('Fetch Error!:', err.message);
+        setError(err.message);
+      }
+    };
+
+    fetchAboutMeData();
+  }, []);
+
   return (
     <section
       id="about-me"
@@ -14,11 +36,12 @@ export default function AboutMe() {
       <div className="flex gap-10">
         <img
           src="public/assets/profile.png"
-          className="w-full max-w-[400px] h-fit shadow-sm"
+          className="w-full max-w-[300px] h-fit border-[3px] rounded-xl shadow-lg shadow-zinc-500"
+          alt="profile"
         />
         <div className="flex flex-col gap-5">
-          {aboutMeData.map((item) => (
-            <QandA data={item} />
+          {aboutMeData.map((item, index) => (
+            <QandA data={item} key={index} />
           ))}
         </div>
       </div>

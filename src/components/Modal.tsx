@@ -25,7 +25,7 @@ export default function Modal() {
           {/* 역할 배지 */}
           <div className="flex gap-2 flex-wrap">
             {modalContent.role.map((role, index) => (
-              <Badge key={index} content={role} />
+              <Badge key={index} content={`#${role}`} />
             ))}
           </div>
 
@@ -34,7 +34,7 @@ export default function Modal() {
 
           {/* 스킬 섹션 */}
           <div className="flex gap-2">
-            <Badge content="Skills" style="bg-black" />
+            <Badge content="Skills" style="bg-black text-white" />
             <div className="flex gap-2 flex-wrap">
               {modalContent.skill.map((skill, index) => (
                 <Badge key={index} content={skill} />
@@ -44,7 +44,6 @@ export default function Modal() {
 
           {/* 링크 섹션 */}
           <div className="flex gap-4 w-fit items-center">
-            <Badge content="Show More" style="bg-black" />
             {/* GitHub 링크 */}
             <a
               className="flex items-center justify-center w-10 h-10 rounded-full transition hover:text-zinc-500"
@@ -66,6 +65,13 @@ export default function Modal() {
               <svg className="w-6 h-6">
                 <use href="/sprite.svg#ReadMore" />
               </svg>
+            </a>
+            {/* 노션 링크 */}
+            <a href="">
+              <Badge
+                content="상세 보기"
+                style="bg-zinc-100 border-[2px] border-black text-black"
+              />
             </a>
           </div>
 
