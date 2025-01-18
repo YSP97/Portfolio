@@ -1,14 +1,31 @@
+import { useEffect, useRef } from 'react';
 import useModalStore from '../stores/useModalStore.tsx';
+import { gsap } from 'gsap';
 import Badge from './Badge.tsx';
 
 export default function Modal() {
   const { isOpen, closeModal, modalContent } = useModalStore();
+  const modalRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (isOpen && modalRef.current) {
+      // 모달 애니메이션 실행
+      gsap.fromTo(
+        modalRef.current,
+        { opacity: 0, scale: 0.9 },
+        { opacity: 1, scale: 1, duration: 1, ease: 'power3.out' }
+      );
+    }
+  }, [isOpen]);
 
   if (!isOpen || !modalContent) return null;
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
-      <div className="bg-white rounded-lg shadow-lg p-6 flex gap-6 max-w-[1000px]">
+      <div
+        ref={modalRef}
+        className="bg-white rounded-lg shadow-lg p-6 flex gap-6 max-w-[1000px]"
+      >
         <img
           src={modalContent.thumnail}
           alt={modalContent.title}
@@ -51,7 +68,7 @@ export default function Modal() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <svg className="">
+              <svg className="w-6 h-6">
                 <use href="/sprite.svg#github" />
               </svg>
             </a>
@@ -67,7 +84,11 @@ export default function Modal() {
               </svg>
             </a>
             {/* 노션 링크 */}
-            <a href="">
+            <a
+              href={modalContent.detail}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Badge
                 content="상세 보기"
                 style="bg-zinc-100 border-[2px] border-black text-black"

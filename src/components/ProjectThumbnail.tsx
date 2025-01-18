@@ -1,9 +1,9 @@
-export default function ProjectThumbnail({img}) {
+export default function ProjectThumbnail({ img, title }) {
   return (
     <img
       src={img}
       className="max-w-[530px]  rounded-lg shadow-md"
-      alt="Project Thumbnail"
+      alt={`${title} project thumbnail`}
     />
   );
 }

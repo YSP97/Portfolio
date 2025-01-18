@@ -13,6 +13,7 @@ export default function ProjectLink({ projectData }) {
       role: projectData.role,
       skill: projectData.skill,
       period: projectData.period,
+      detail: projectData.detail,
     });
 
     openModal();
