@@ -63,12 +63,12 @@ export default function Experiences() {
   return (
     <section
       ref={sectionRef}
-      className="bg-black text-white flex flex-col items-center py-[104px] gap-5"
+      className="bg-black text-white flex flex-col items-center py-[104px] gap-5 justify-center"
     >
-      <h1 className="text-5xl font-sora">
+      <h1 className="text-5xl font-sora max-md:flex max-md:flex-col max-md:gap-4 items-center">
         My <span className="font-extrabold">Experience</span>
       </h1>
-      <div className="py-10 flex flex-col gap-8 justify-center">
+      <div className="py-10 flex flex-col gap-8 justify-center max-md:px-4">
         {experience.map((item, index) => (
           <Experience
             data={item}

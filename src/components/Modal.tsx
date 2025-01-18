@@ -24,15 +24,15 @@ export default function Modal() {
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
       <div
         ref={modalRef}
-        className="bg-white rounded-lg shadow-lg p-6 flex gap-6 max-w-[1000px]"
+        className="bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row gap-6 max-w-[1000px] max-h-[90vh] overflow-y-auto"
       >
         <img
           src={modalContent.thumnail}
           alt={modalContent.title}
-          className="w-1/2 h-auto rounded-lg object-cover"
+          className="w-full md:w-1/2 h-auto rounded-lg object-cover"
         />
 
-        <div className="flex flex-col w-2/3 gap-4">
+        <div className="flex flex-col gap-4 w-full md:w-2/3">
           {/* 프로젝트 제목 */}
           <h2 className="text-2xl font-bold">{modalContent.title}</h2>
 
@@ -51,7 +51,7 @@ export default function Modal() {
 
           {/* 스킬 섹션 */}
           <div className="flex gap-2">
-            <Badge content="Skills" style="bg-black text-white" />
+            <Badge content="Skills" style="bg-black text-white h-fit" />
             <div className="flex gap-2 flex-wrap">
               {modalContent.skill.map((skill, index) => (
                 <Badge key={index} content={skill} />
@@ -68,7 +68,7 @@ export default function Modal() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <svg className="w-6 h-6">
+              <svg className="w-10 h-10">
                 <use href="/sprite.svg#github" />
               </svg>
             </a>
@@ -110,3 +110,4 @@ export default function Modal() {
     </div>
   );
 }
+
