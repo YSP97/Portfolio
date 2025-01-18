@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Experience from '../components/Experience.tsx';
 import supabase from '../utils/supabase.ts';
+import { gsap } from 'gsap';
 
 export default function Experiences() {
   const [experience, setExperience] = useState([]);
   const [error, setError] = useState(null);
+  const experienceRefs = useRef<HTMLDivElement[]>([]);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const fetchExperience = async () => {
@@ -23,14 +26,55 @@ export default function Experiences() {
 
     fetchExperience();
   }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap.fromTo(
+              experienceRefs.current,
+              { opacity: 0, y: 50 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 2,
+                ease: 'power3.out',
+                stagger: 0.2,
+              }
+            );
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [experience]);
+
   return (
-    <section className="bg-black text-white flex flex-col items-center py-[104px] gap-5">
+    <section
+      ref={sectionRef}
+      className="bg-black text-white flex flex-col items-center py-[104px] gap-5"
+    >
       <h1 className="text-5xl font-sora">
         My <span className="font-extrabold">Experience</span>
       </h1>
       <div className="py-10 flex flex-col gap-8 justify-center">
         {experience.map((item, index) => (
-          <Experience data={item} key={index} />
+          <Experience
+            data={item}
+            key={index}
+            ref={(el) => (experienceRefs.current[index] = el!)}
+          />
         ))}
       </div>
     </section>

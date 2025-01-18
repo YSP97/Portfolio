@@ -1,6 +1,8 @@
-export default function QandA({ data }) {
+import { forwardRef } from 'react';
+
+const QandA = forwardRef<HTMLDivElement, { data: any }>(({ data }, ref) => {
   return (
-    <div className="flex flex-col gap-3 text1">
+    <div ref={ref} className="flex flex-col gap-3 text1">
       <div className="flex gap-3 text-[30px]">
         <span className="font-semibold">{data.question}</span>
       </div>
@@ -9,4 +11,6 @@ export default function QandA({ data }) {
       </div>
     </div>
   );
-}
+});
+
+export default QandA;
