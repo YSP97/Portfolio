@@ -3,7 +3,7 @@ import ProjectLink from './ProjectLink.tsx';
 import ProjectThumbnail from './ProjectThumbnail.tsx';
 
 interface ProjectData {
-  count: string;
+  count: number;
   title: string;
   img?: string;
   desc: string;
@@ -26,10 +26,10 @@ const Project = forwardRef<HTMLDivElement, ProjectProps>(
           isEven ? 'flex-row' : 'flex-row-reverse'
         }`}
       >
-        <ProjectThumbnail img={projectData.img} title={projectData.title}/>
+        <ProjectThumbnail img={projectData.img} title={projectData.title} />
         <div className="flex flex-col gap-7 justify-center max-md:gap-2">
           <div className="font-sora text-5xl font-extrabold">
-            {projectData.count}
+            {`0${projectData.count}`}
           </div>
           <div className="font-semibold text-[32px]">{projectData.title}</div>
           <p className="text-zinc-500">{projectData.desc}</p>

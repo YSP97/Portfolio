@@ -15,7 +15,8 @@ export default function AboutMe() {
       try {
         let { data: aboutMe, error } = await supabase
           .from('aboutMe')
-          .select('*');
+          .select('*')
+          .order('num', { ascending: true });
 
         if (error) throw error;
         setAboutMeData(aboutMe);
@@ -83,7 +84,7 @@ export default function AboutMe() {
     <section
       ref={sectionRef}
       id="about-me"
-      className="py-[104px] flex flex-col gap-10 px-20 items-center w-full max-md:px-4"
+      className="py-[104px] flex flex-col gap-10 px-56 items-center w-full max-lg:px-4"
     >
       <h1 className="flex gap-4 text-[48px] font-sora">
         <span>About</span>
