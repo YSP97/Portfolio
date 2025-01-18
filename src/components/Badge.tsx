@@ -7,8 +7,8 @@ export default function Badge({
 }) {
   return (
     <div
-      className={`px-2 py-[2px] w-fit rounded-2xl text-white ${
-        style ? style : 'bg-zinc-500'
+      className={`px-2 py-[2px] w-fit rounded-2xl ${
+        style ? style : 'bg-zinc-500 text-white'
       }`}
     >
       {content}

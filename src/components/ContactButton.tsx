@@ -10,11 +10,19 @@ export default function ContactButton({ icon, link }: ContactButtonProps) {
   const isLink = link ? link : null;
 
   const handleClick = () => {
-    const data = {
-      title: 'PHONE',
-      phone: '010-2955-4941',
-    };
-    setContactData(data);
+    if (icon === 'phone') {
+      const data = {
+        title: 'PHONE',
+        phone: '010-2955-4941',
+      };
+      setContactData(data);
+    } else if (icon === 'email') {
+      const data = {
+        title: 'EMAIL',
+        phone: 'pus9717@gmail.com',
+      };
+      setContactData(data);
+    }
     openModal();
   };
 

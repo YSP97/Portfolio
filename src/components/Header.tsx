@@ -4,6 +4,9 @@ export default function Header() {
   return (
     <div className="flex flex-row justify-between py-6 px-20 items-center bg-white">
       <div className="flex flex-row gap-8 font-semibold select-none cursor-pointer">
+        <Link to="/">
+          <img src="/YSPlogo.svg" className="w-12" />
+        </Link>
         <Link to="about-me" smooth={true} duration={700}>
           About Me
         </Link>
