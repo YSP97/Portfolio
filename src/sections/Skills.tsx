@@ -11,6 +11,7 @@ export default function Skills() {
     { icon: 'css', name: 'CSS3' },
     { icon: 'javascript', name: 'JavaScript' },
     { icon: 'typescript', name: 'TypeScript' },
+    { icon: 'python', name: 'Python' },
     { icon: 'react', name: 'React' },
     { icon: 'sass', name: 'Sass/scss' },
     { icon: 'tailwindcss', name: 'TailwindCSS' },
@@ -66,9 +67,7 @@ export default function Skills() {
         My <span className="font-extrabold">Skills</span>
       </h1>
 
-      <div
-        className="flex flex-wrap gap-10 justify-center mt-10 max-w-[1000px]"
-      >
+      <div className="flex flex-wrap gap-10 justify-center mt-10 max-w-[1100px]">
         {skillsData.map((skill, index) => (
           <Skill
             key={index}
