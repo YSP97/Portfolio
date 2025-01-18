@@ -42,7 +42,7 @@ export default function MoveUp() {
     <Link to="top" smooth={true} duration={700}>
       <svg
         ref={moveUpRef}
-        className="w-14 h-14 cursor-pointer fill-white hover:fill-gray-200"
+        className="w-14 h-14 cursor-pointer max-sm:w-10"
         onMouseEnter={() => handleMouseEnter(moveUpRef.current!)}
         onMouseLeave={() => handleMouseLeave(moveUpRef.current!)}
       >

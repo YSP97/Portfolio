@@ -63,7 +63,7 @@ export default function Projects() {
     <section
       ref={sectionRef}
       id="project"
-      className="bg-black text-white flex flex-col items-center py-[104px] px-[112px] gap-[20px]"
+      className="bg-black text-white flex flex-col items-center py-[104px] px-[112px] gap-[20px] max-lg:px-[50px]"
     >
       <h1 className="font-sora text-5xl">
         My <span className="font-extrabold">Project</span>

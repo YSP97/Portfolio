@@ -22,12 +22,12 @@ const Project = forwardRef<HTMLDivElement, ProjectProps>(
     return (
       <div
         ref={ref}
-        className={`flex gap-20 items-center py-[60px] ${
+        className={`flex max-lg:flex-col max-md:py-10 gap-20 max-md:gap-10 items-center py-[60px] ${
           isEven ? 'flex-row' : 'flex-row-reverse'
         }`}
       >
         <ProjectThumbnail img={projectData.img} title={projectData.title}/>
-        <div className="flex flex-col gap-7 justify-center">
+        <div className="flex flex-col gap-7 justify-center max-md:gap-2">
           <div className="font-sora text-5xl font-extrabold">
             {projectData.count}
           </div>

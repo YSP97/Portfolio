@@ -20,7 +20,7 @@ export default function ContactModal() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-7">
       <div
         ref={modalRef}
         className="bg-white rounded-lg shadow-lg flex flex-col gap-6 max-w-lg w-full p-7"

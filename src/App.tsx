@@ -28,7 +28,7 @@ export default function App() {
         <Projects />
         <ContactMe />
       </div>
-      <div className="fixed bottom-6 right-6">
+      <div className="fixed bottom-6 right-6 max-md:bottom-3">
         <MoveUp />
       </div>
       <div className="fixed z-50">
