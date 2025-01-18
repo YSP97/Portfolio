@@ -55,10 +55,11 @@ export default function Banner() {
             className="text-sm max-w-[600px] text-zinc-500"
             ref={(el) => (linesRef.current[3] = el)}
           >
-            I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry. Lorem Ipsum has been the industry's standard
-            dummy text ever since the 1500s, when an unknown printer took a
-            galley of type and scrambled it to specimen book.
+            안녕하세요. 사용자의 관점에서 고민하는 것을 즐기는 프론트엔드 개발자
+            박윤선입니다. 사용자에게 웹을 통한 다양하고 편안한 경험을 제공하고 싶어서 개발자로 전향하게 되었습니다. 사용자와의 소통이나 작업하는 동료들과의 피드백을
+            중요시하여 다양한 사람들과 자주 소통하고 사용자의 경험을 위한 개선을 위해 노력하고
+            있습니다. 다양한 라이브러리와 API를 찾아보거나 새로운 기술을
+            공부하여 적용하는 것을 좋아하고 새로운 도전을 나서고 있습니다. 
           </p>
           <Contacts />
         </div>
