@@ -28,8 +28,8 @@ const Experience = forwardRef<HTMLDivElement, { data: any }>(
         onMouseEnter={(e) => handleMouseEnter(e.currentTarget)}
         onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
       >
-        <div className="flex justify-between items-center">
-          <div className="flex items-center gap-7">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <div className="flex items-center gap-7 max-md:gap-3">
             <img
               src={data.icon}
               className="w-10 rounded-full"
@@ -37,7 +37,9 @@ const Experience = forwardRef<HTMLDivElement, { data: any }>(
             />
             <span className="font-semibold">{data.name}</span>
           </div>
-          <span className="font-sora">{data.peroid}</span>
+          <span className="font-sora md:ml-auto md:mt-0 mt-2 text-zinc-300">
+            {data.peroid}
+          </span>
         </div>
         <p className="text-zinc-300">{data.desc}</p>
       </div>

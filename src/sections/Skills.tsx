@@ -62,7 +62,7 @@ export default function Skills() {
       id="skills"
       className="flex flex-col font-sora items-center py-[104px] px-20"
     >
-      <h1 className="text-[48px]">
+      <h1 className="text-[48px] max-md:flex max-md:gap-2">
         My <span className="font-extrabold">Skills</span>
       </h1>
 

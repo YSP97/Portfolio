@@ -83,17 +83,17 @@ export default function AboutMe() {
     <section
       ref={sectionRef}
       id="about-me"
-      className="py-[104px] flex flex-col gap-10 px-20 items-center"
+      className="py-[104px] flex flex-col gap-10 px-20 items-center w-full max-md:px-4"
     >
       <h1 className="flex gap-4 text-[48px] font-sora">
         <span>About</span>
         <span className="font-extrabold">Me</span>
       </h1>
-      <div className="flex gap-10">
+      <div className="flex flex-col md:flex-row gap-10 max-md:items-center">
         <img
           ref={imgRef}
           src="/assets/profile.png"
-          className="w-full max-w-[300px] h-fit border-[3px] rounded-xl shadow-lg shadow-zinc-500"
+          className="w-full max-w-[300px] h-fit border-[3px] rounded-xl shadow-lg shadow-zinc-500 max-md:max-w-[200px]"
           alt="profile"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
