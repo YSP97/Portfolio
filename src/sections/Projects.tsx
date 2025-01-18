@@ -14,7 +14,10 @@ export default function Projects() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const { data, error } = await supabase.from('project').select('*');
+        const { data, error } = await supabase
+          .from('project')
+          .select('*')
+          .order('count', { ascending: true });
         if (error) throw error;
         setProjects(data);
       } catch (err) {
