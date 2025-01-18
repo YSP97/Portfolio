@@ -65,7 +65,7 @@ export default function Projects() {
       id="project"
       className="bg-black text-white flex flex-col items-center py-[104px] px-[112px] gap-[20px] max-lg:px-[50px]"
     >
-      <h1 className="font-sora text-5xl">
+      <h1 className="font-sora text-5xl max-sm:flex max-sm:gap-2">
         My <span className="font-extrabold">Project</span>
       </h1>
       {error && <p className="text-red-500">데이터가 존재하지 않아요.</p>}

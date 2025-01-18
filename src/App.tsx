@@ -1,17 +1,14 @@
 import 'react';
-import supabase from './utils/supabase.ts';
-import { useEffect, useState } from 'react';
-import Header from './components/Header.tsx';
-import AboutMe from './sections/AboutMe.tsx';
-import Skills from './sections/Skills.tsx';
-import ContactMe from './sections/ContactMe.tsx';
-import Projects from './sections/Projects.tsx';
-import Banner from './sections/Banner.tsx';
-import Experiences from './sections/Experiences.tsx';
-import MoveUp from './components/MoveUp.tsx';
-import Modal from './components/Modal.tsx';
-import ContactModal from './components/ContactModal.tsx';
-import Footer from './components/Footer.tsx';
+import {
+  AboutMe,
+  Banner,
+  ContactMe,
+  Experiences,
+  Projects,
+  Skills,
+} from '@/sections';
+import { Header, MoveUp, Modal, ContactModal, Footer } from '@/components';
+
 
 export default function App() {
   return (
