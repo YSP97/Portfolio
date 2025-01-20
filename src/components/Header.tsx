@@ -1,10 +1,12 @@
 import { Link } from 'react-scroll';
 import { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
+import supabase from '../utils/supabase.ts';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  const [resume, setResume] = useState(null);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
@@ -55,8 +57,8 @@ export default function Header() {
           </div>
         </div>
         <a
-          href="/assets/resume.hwp"
-          download="resume.hwp"
+          href="/assets/resume.pdf"
+          download="resume.pdf"
           className="flex flex-row items-center gap-2 bg-black text-white rounded py-2 px-4 hover:bg-zinc-600 max-md:hidden"
           aria-label="이력서 다운로드"
         >
@@ -121,7 +123,7 @@ export default function Header() {
         </Link>
         <a
           href="/assets/resume.pdf"
-          download="resume.hwp"
+          download="resume.pdf"
           className="text-lg font-semibold bg-black text-white rounded py-2 px-4 hover:bg-zinc-600"
           aria-label="이력서 다운로드"
           onClick={() => setMenuOpen(false)}
