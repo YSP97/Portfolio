@@ -39,7 +39,7 @@ export default function MoveUp() {
   };
 
   return (
-    <Link to="top" smooth={true} duration={700}>
+    <Link to="top" smooth={true} duration={700} title="위로 이동">
       <svg
         ref={moveUpRef}
         className="w-14 h-14 cursor-pointer max-sm:w-10"

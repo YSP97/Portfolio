@@ -20,7 +20,7 @@ export default function ProjectLink({ projectData }) {
   };
 
   return (
-    <button onClick={handleClick} className="w-6 h-6">
+    <button onClick={handleClick} className="w-6 h-6" title="상세 보기">
       <svg className="w-6 h-6">
         <use href="/sprite.svg#ReadMore" />
       </svg>

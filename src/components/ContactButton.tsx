@@ -55,6 +55,7 @@ export default function ContactButton({ icon, link }: ContactButtonProps) {
         className="contact-button bg-white w-14 h-14 border-[3px] border-black rounded hover:bg-black hover:text-white cursor-pointer flex justify-center items-center transition-transform"
         onMouseEnter={() => handleMouseEnter(buttonRef.current!)}
         onMouseLeave={() => handleMouseLeave(buttonRef.current!)}
+        title={`${icon}으로 이동`}
       >
         <svg className="w-5 h-5">
           <use href={`/sprite.svg#${icon}`} />
@@ -70,6 +71,7 @@ export default function ContactButton({ icon, link }: ContactButtonProps) {
       onClick={handleClick}
       onMouseEnter={() => handleMouseEnter(buttonRef.current!)}
       onMouseLeave={() => handleMouseLeave(buttonRef.current!)}
+      title={`${icon} 정보 보기`}
     >
       <svg className="w-5 h-5">
         <use href={`/sprite.svg#${icon}`} />
