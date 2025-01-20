@@ -120,7 +120,7 @@ export default function Header() {
           Contact Me
         </Link>
         <a
-          href="/assets/resume.hwp"
+          href="/assets/resume.pdf"
           download="resume.hwp"
           className="text-lg font-semibold bg-black text-white rounded py-2 px-4 hover:bg-zinc-600"
           aria-label="이력서 다운로드"
