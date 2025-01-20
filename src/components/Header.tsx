@@ -1,14 +1,34 @@
 import { Link } from 'react-scroll';
 import { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
+import supabase from '@/utils/supabase';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  const [resume, setResume] = useState(null);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    const fetchResume = async () => {
+      try {
+        const { data: Profile, error } = await supabase
+          .from('Profile')
+          .select('resume');
+        setResume(Profile[0].resume);
+        if (error) throw error;
+      } catch (err) {
+        console.error('Fetch Error!: ', err.massage);
+      }
+    };
+
+    fetchResume();
+  }, []);
+
+  console.log(resume);
 
   // GSAP 애니메이션 처리
   useEffect(() => {
@@ -55,10 +75,12 @@ export default function Header() {
           </div>
         </div>
         <a
-          href="/assets/resume.hwp"
-          download="resume.hwp"
+          href={resume}
+          download="resume.pdf"
           className="flex flex-row items-center gap-2 bg-black text-white rounded py-2 px-4 hover:bg-zinc-600 max-md:hidden"
           aria-label="이력서 다운로드"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <div className="font-semibold">Resume</div>
           <svg className="w-[15px] h-[15px]">
@@ -120,11 +142,13 @@ export default function Header() {
           Contact Me
         </Link>
         <a
-          href="/assets/resume.pdf"
-          download="resume.hwp"
+          href={resume}
+          download="resume.pdf"
           className="text-lg font-semibold bg-black text-white rounded py-2 px-4 hover:bg-zinc-600"
           aria-label="이력서 다운로드"
           onClick={() => setMenuOpen(false)}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Resume
         </a>
