@@ -28,8 +28,6 @@ export default function Header() {
     fetchResume();
   }, []);
 
-  console.log(resume);
-
   // GSAP 애니메이션 처리
   useEffect(() => {
     if (menuOpen) {
