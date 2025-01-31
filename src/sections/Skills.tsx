@@ -40,6 +40,7 @@ export default function Skills() {
                 stagger: 0.2,
               }
             );
+            observer.unobserve(entry.target);
           }
         });
       },

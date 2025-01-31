@@ -43,6 +43,7 @@ export default function Experiences() {
                 stagger: 0.2,
               }
             );
+            observer.unobserve(entry.target);
           }
         });
       },

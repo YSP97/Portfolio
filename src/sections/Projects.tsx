@@ -45,6 +45,7 @@ export default function Projects() {
                 stagger: 0.2,
               }
             );
+            observer.unobserve(entry.target);
           }
         });
       },
