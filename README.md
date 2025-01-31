@@ -50,3 +50,9 @@
 ![image](https://github.com/user-attachments/assets/b64571c8-e6a6-4790-837c-691a2f84256b)
 ![image](https://github.com/user-attachments/assets/d535a7e6-11da-4233-acef-b7725b65c06c)
 
+
+
+### 디자인 출처
+https://www.figma.com/community/file/1318529372146880502/illustration-based-portfolio-website-template
+
+
