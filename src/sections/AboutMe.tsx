@@ -10,6 +10,7 @@ export default function AboutMe() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const imgRef = useRef<HTMLImageElement | null>(null);
 
+  /// 데이터 fetch
   useEffect(() => {
     const fetchAboutMeData = async () => {
       try {
@@ -45,6 +46,7 @@ export default function AboutMe() {
                 stagger: 0.2,
               }
             );
+            observer.unobserve(entry.target);
           }
         });
       },
@@ -60,7 +62,7 @@ export default function AboutMe() {
         observer.unobserve(sectionRef.current);
       }
     };
-  }, [aboutMeData]);
+  }, []);
 
   const handleMouseEnter = () => {
     gsap.to(imgRef.current, {

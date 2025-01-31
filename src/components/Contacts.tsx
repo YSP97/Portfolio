@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 
 export default function Contacts() {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const tl = gsap.timeline({ delay: 3 });
+  const tl = gsap.timeline({ delay: 2 });
 
   useEffect(() => {
     if (containerRef.current) {
@@ -15,9 +15,9 @@ export default function Contacts() {
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
+          duration: 3,
           stagger: 0.2,
-          ease: 'power2.out',
+          ease: 'power3.out',
         }
       );
     }

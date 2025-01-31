@@ -9,7 +9,6 @@ export default function Modal() {
 
   useEffect(() => {
     if (isOpen && modalRef.current) {
-      // 모달 애니메이션 실행
       gsap.fromTo(
         modalRef.current,
         { opacity: 0, scale: 0.9 },
@@ -67,6 +66,7 @@ export default function Modal() {
               href={modalContent.github}
               target="_blank"
               rel="noopener noreferrer"
+              title="Github 링크"
             >
               <svg className="w-10 h-10">
                 <use href="/sprite.svg#github" />
@@ -78,6 +78,7 @@ export default function Modal() {
               href={modalContent.link}
               target="_blank"
               rel="noopener noreferrer"
+              title="배포 링크"
             >
               <svg className="w-6 h-6">
                 <use href="/sprite.svg#ReadMore" />
@@ -110,4 +111,3 @@ export default function Modal() {
     </div>
   );
 }
-
