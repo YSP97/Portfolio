@@ -31,7 +31,7 @@ export default function Banner() {
           duration: 2,
           ease: 'power3.out',
         },
-        '-=1.5' // 텍스트 애니메이션과 동시 시작
+        '-=1.5'
       );
   }, []);
 

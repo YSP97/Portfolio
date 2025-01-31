@@ -49,7 +49,7 @@ export default function Projects() {
           }
         });
       },
-      { threshold: 0.2 } // 트리거 설정 (20% 뷰포트에 들어오면)
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
