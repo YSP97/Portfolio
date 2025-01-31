@@ -15,7 +15,7 @@ export default function Contacts() {
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
+          duration: 3,
           stagger: 0.2,
           ease: 'power3.out',
         }
