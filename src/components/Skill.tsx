@@ -28,7 +28,7 @@ const Skill = forwardRef<HTMLDivElement, { icon: string; name: string }>(
     return (
       <div
         ref={ref}
-        className="w-[186px] h-[186px] bg-white rounded flex flex-col justify-center items-center mx-auto gap-8 py-[37px] border-[2px] border-black hover:bg-black hover:text-white transition-colors duration-300"
+        className="w-[186px] h-[186px] bg-white rounded flex flex-col justify-center items-center mx-auto gap-8 py-[37px] border-[2px] border-black hover:bg-black hover:text-white transition-colors duration-300 opacity-0"
         aria-label={`${name}`}
         onMouseEnter={(e) => handleMouseEnter(e.currentTarget)}
         onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
