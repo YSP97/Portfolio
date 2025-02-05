@@ -22,7 +22,7 @@ const Project = forwardRef<HTMLDivElement, ProjectProps>(
     return (
       <div
         ref={ref}
-        className={`flex max-lg:flex-col max-md:py-10 gap-20 max-md:gap-10 items-center py-[60px] ${
+        className={`flex max-lg:flex-col opacity-0 max-md:py-10 gap-20 max-md:gap-10 items-center py-[60px] ${
           isEven ? 'flex-row' : 'flex-row-reverse'
         }`}
       >
