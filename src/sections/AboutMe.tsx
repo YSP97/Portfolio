@@ -62,7 +62,7 @@ export default function AboutMe() {
         observer.unobserve(sectionRef.current);
       }
     };
-  }, []);
+  }, [aboutMeData]);
 
   const handleMouseEnter = () => {
     gsap.to(imgRef.current, {
