@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import useModalStore from '../stores/useModalStore.tsx';
 import { gsap } from 'gsap';
 import Badge from './Badge.tsx';
+import Pdf from './Pdf.tsx';
 
 export default function Modal() {
   const { isOpen, closeModal, modalContent } = useModalStore();
@@ -108,6 +109,7 @@ export default function Modal() {
           </div>
         </div>
       </div>
+      <Pdf url={modalContent.portfolio} />
     </div>
   );
 }

@@ -18,6 +18,7 @@ interface ModalStore {
     skill: string[];
     period: string;
     detail: string;
+    portfolio: string;
   } | null;
   // 프로젝트 모달 데이터 상태 업데이트
   setData: (content: {
@@ -30,6 +31,7 @@ interface ModalStore {
     skill: string[];
     period: string;
     detail: string;
+    portfolio: string;
   }) => void;
 
   resetModalContent: () => void;
