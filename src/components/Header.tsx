@@ -52,7 +52,7 @@ export default function Header() {
   return (
     <div>
       {/* 헤더 */}
-      <div className="flex flex-row justify-between py-6 px-20 items-center bg-white max-md:px-4 max-md:py-4 max-lg:px-6">
+      <div className="flex flex-row justify-between py-6 px-20 items-center bg-white max-md:px-4 max-md:py-4 max-lg:px-6 text">
         <div className="flex flex-row gap-12 font-semibold select-none cursor-pointer">
           <a href="/">
             <img src="/YSPlogo.svg" className="w-12" alt="logo" />

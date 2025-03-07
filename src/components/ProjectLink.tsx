@@ -14,6 +14,7 @@ export default function ProjectLink({ projectData }) {
       skill: projectData.skill,
       period: projectData.period,
       detail: projectData.detail,
+      portfolio: projectData.portfolio,
     });
 
     openModal();
