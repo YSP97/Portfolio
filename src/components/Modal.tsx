@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react';
 import useModalStore from '../stores/useModalStore.tsx';
 import { gsap } from 'gsap';
 import Badge from './Badge.tsx';
+import Pdf from './Pdf.tsx';
+import { Document, Page } from 'react-pdf';
 
 export default function Modal() {
   const { isOpen, closeModal, modalContent } = useModalStore();
@@ -20,93 +22,27 @@ export default function Modal() {
   if (!isOpen || !modalContent) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
-      <div
-        ref={modalRef}
-        className="bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row gap-6 max-w-[1000px] max-h-[90vh] overflow-y-auto"
-      >
-        <img
-          src={modalContent.thumnail}
-          alt={modalContent.title}
-          className="w-full md:w-1/2 h-auto rounded-lg object-cover"
-        />
-
-        <div className="flex flex-col gap-4 w-full md:w-2/3">
-          {/* 프로젝트 제목 */}
-          <h2 className="text-2xl font-bold">{modalContent.title}</h2>
-
-          {/* 프로젝트 기간 */}
-          <div className="font-sora">{modalContent.period}</div>
-
-          {/* 역할 배지 */}
-          <div className="flex gap-2 flex-wrap">
-            {modalContent.role.map((role, index) => (
-              <Badge key={index} content={`#${role}`} />
-            ))}
-          </div>
-
-          {/* 설명 */}
-          <p className="text-gray-700">{modalContent.desc}</p>
-
-          {/* 스킬 섹션 */}
-          <div className="flex gap-2">
-            <Badge content="Skills" style="bg-black text-white h-fit" />
-            <div className="flex gap-2 flex-wrap">
-              {modalContent.skill.map((skill, index) => (
-                <Badge key={index} content={skill} />
-              ))}
-            </div>
-          </div>
-
-          {/* 링크 섹션 */}
-          <div className="flex gap-4 w-fit items-center">
-            {/* GitHub 링크 */}
-            <a
-              className="flex items-center justify-center w-10 h-10 rounded-full transition hover:text-zinc-500"
-              href={modalContent.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Github 링크"
-            >
-              <svg className="w-10 h-10">
-                <use href="/sprite.svg#github" />
-              </svg>
-            </a>
-            {/* 배포 링크 */}
-            <a
-              className="flex items-center justify-center w-10 h-10 bg-black hover:bg-zinc-500 rounded-full text-white transition"
-              href={modalContent.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="배포 링크"
-            >
-              <svg className="w-6 h-6">
-                <use href="/sprite.svg#ReadMore" />
-              </svg>
-            </a>
-            {/* 노션 링크 */}
-            <a
-              href={modalContent.detail}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Badge
-                content="상세 보기"
-                style="bg-zinc-100 border-[2px] border-black text-black"
-              />
-            </a>
-          </div>
-
-          {/* 닫기 버튼 */}
-          <div className="flex justify-end">
-            <button
-              onClick={closeModal}
-              className="bg-black text-white px-4 py-2 rounded hover:bg-zinc-500 transition"
-            >
-              Close
-            </button>
-          </div>
+    <div
+      ref={modalRef}
+      className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+    >
+      <div className="flex flex-col bg-white rounded-md gap-5 p-6 max-w-[90%] max-h-[90vh] overflow-auto">
+        <div className="flex gap-3 justify-end">
+          <a
+            href="/"
+            className="bg-gray-400 rounded px-4 py-2 text-white hover:bg-zinc-500"
+          >
+            다운로드
+          </a>
+          <button
+            onClick={closeModal}
+            className="bg-gray-400 text-white px-4 py-2 rounded hover:bg-zinc-500 transition"
+            aria-label="모달 닫기"
+          >
+            Close
+          </button>
         </div>
+        <Pdf url={modalContent.portfolio} />
       </div>
     </div>
   );

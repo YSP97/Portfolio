@@ -69,7 +69,7 @@ export default function Experiences() {
       <h1 className="text-5xl font-sora max-md:flex max-md:flex-col max-md:gap-4 items-center">
         My <span className="font-extrabold">Experience</span>
       </h1>
-      <div className="py-10 flex flex-col gap-8 justify-center max-md:px-4">
+      <div className="py-10 flex flex-col gap-8 justify-center px-4">
         {experience.map((item, index) => (
           <Experience
             data={item}

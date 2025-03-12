@@ -75,12 +75,13 @@ export default function Projects() {
       {error && <p className="text-red-500">데이터가 존재하지 않아요.</p>}
       {projects.length > 0 ? (
         projects.map((project, index) => (
-          <Project
-            key={index}
-            index={index}
-            projectData={project}
-            ref={(el) => (projectRefs.current[index] = el!)}
-          />
+          <div key={index}>
+            <Project
+              index={index}
+              projectData={project}
+              ref={(el) => (projectRefs.current[index] = el!)}
+            />
+          </div>
         ))
       ) : (
         <p>Loading projects...</p>
