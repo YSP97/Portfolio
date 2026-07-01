@@ -95,7 +95,7 @@ export default function AboutMe() {
       <div className="flex flex-col md:flex-row gap-10 max-md:items-center">
         <img
           ref={imgRef}
-          src="/assets/profile.png"
+          src="/assets/KakaoTalk_20260701_153124979.jpg"
           className="w-full max-w-[300px] h-fit border-[3px] rounded-xl shadow-lg shadow-zinc-500 max-md:max-w-[200px]"
           alt="profile"
           onMouseEnter={handleMouseEnter}
