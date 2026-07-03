@@ -1,31 +1,11 @@
 import { useEffect, useState, useRef } from 'react';
 import Experience from '../components/Experience.tsx';
-import supabase from '../utils/supabase.ts';
 import { gsap } from 'gsap';
 
 export default function Experiences() {
   const [experience, setExperience] = useState([]);
-  const [error, setError] = useState(null);
   const experienceRefs = useRef<HTMLDivElement[]>([]);
   const sectionRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const fetchExperience = async () => {
-      try {
-        let { data: Experience, error } = await supabase
-          .from('Experience')
-          .select('*');
-
-        if (error) throw error;
-        setExperience(Experience);
-      } catch (err) {
-        console.error('Fetch Error!:', err.message);
-        setError(err.message);
-      }
-    };
-
-    fetchExperience();
-  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

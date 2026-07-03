@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
 import Project from '../components/Project.tsx';
-import supabase from '../utils/supabase.ts';
 import { gsap } from 'gsap';
 
 export default function Projects() {
@@ -10,24 +9,6 @@ export default function Projects() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
   const tl = gsap.timeline({ delay: 1 });
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const { data, error } = await supabase
-          .from('project')
-          .select('*')
-          .order('count', { ascending: true });
-        if (error) throw error;
-        setProjects(data);
-      } catch (err) {
-        console.error('Fetch Error!:', err.message);
-        setError(err.message);
-      }
-    };
-
-    fetchProjects();
-  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

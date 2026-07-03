@@ -1,7 +1,8 @@
 import { forwardRef } from 'react';
 import { gsap } from 'gsap';
+import { Experiences } from '@/types/data';
 
-const Experience = forwardRef<HTMLDivElement, { data: any }>(
+const Experience = forwardRef<HTMLDivElement, { data: Experiences }>(
   ({ data }, ref) => {
     const handleMouseEnter = (el: HTMLDivElement) => {
       gsap.to(el, {
@@ -41,7 +42,7 @@ const Experience = forwardRef<HTMLDivElement, { data: any }>(
             {data.peroid}
           </span>
         </div>
-        <p className="text-zinc-300">{data.desc}</p>
+        <p className="text-zinc-300">{data.description}</p>
       </div>
     );
   }

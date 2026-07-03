@@ -1,26 +1,11 @@
 import { useEffect, useRef } from 'react';
 import Skill from '../components/Skill.tsx';
 import { gsap } from 'gsap';
+import { skillsData } from '@/data/skillsData.ts';
 
 export default function Skills() {
   const skillRefs = useRef<HTMLDivElement[]>([]);
   const sectionRef = useRef<HTMLDivElement | null>(null);
-
-  const skillsData = [
-    { icon: 'html', name: 'HTML5' },
-    { icon: 'css', name: 'CSS3' },
-    { icon: 'javascript', name: 'JavaScript' },
-    { icon: 'typescript', name: 'TypeScript' },
-    { icon: 'python', name: 'Python' },
-    { icon: 'react', name: 'React' },
-    { icon: 'sass', name: 'Sass/scss' },
-    { icon: 'tailwindcss', name: 'TailwindCSS' },
-    { icon: 'zustand', name: 'Zustand' },
-    { icon: 'git', name: 'Git' },
-    { icon: 'github', name: 'Github' },
-    { icon: 'router', name: 'React-Router-Dom' },
-    { icon: 'netlify', name: 'Netlify' },
-  ];
 
   const tl = gsap.timeline({ delay: 1 });
 

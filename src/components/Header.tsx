@@ -1,7 +1,6 @@
 import { Link } from 'react-scroll';
 import { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import supabase from '@/utils/supabase';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,21 +11,6 @@ export default function Header() {
     setMenuOpen((prev) => !prev);
   };
 
-  useEffect(() => {
-    const fetchResume = async () => {
-      try {
-        const { data: Profile, error } = await supabase
-          .from('Profile')
-          .select('resume');
-        setResume(Profile[0].resume);
-        if (error) throw error;
-      } catch (err) {
-        console.error('Fetch Error!: ', err.massage);
-      }
-    };
-
-    fetchResume();
-  }, []);
 
   // GSAP 애니메이션 처리
   useEffect(() => {
