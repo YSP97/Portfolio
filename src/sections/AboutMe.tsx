@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import QandA from '../components/QandA.tsx';
 import { gsap } from 'gsap';
-// ts-ignore
 import { aboutMeData } from '@/data/aboutMeData.ts';
 
 export default function AboutMe() {
