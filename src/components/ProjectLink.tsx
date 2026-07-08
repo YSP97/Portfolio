@@ -1,28 +1,20 @@
 import useModalStore from '../stores/useModalStore.tsx';
+import { Project } from '@/types/project';
 
-export default function ProjectLink({ projectData }) {
-  const { openModal, setData } = useModalStore();
+interface ProjectLinkProps {
+  projectData: Project;
+}
+
+export default function ProjectLink({ projectData }: ProjectLinkProps) {
+  const { openModal } = useModalStore();
 
   const handleClick = () => {
-    setData({
-      title: projectData.title,
-      desc: projectData.desc,
-      thumnail: projectData.img,
-      link: projectData.link,
-      github: projectData.github,
-      role: projectData.role,
-      skill: projectData.skill,
-      period: projectData.period,
-      detail: projectData.detail,
-      portfolio: projectData.portfolio,
-    });
-
-    openModal();
+    openModal(projectData);
   };
 
   return (
-    <button onClick={handleClick} className="w-6 h-6" title="상세 보기">
-      <svg className="w-6 h-6">
+    <button onClick={handleClick} className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform" title="상세 보기">
+      <svg className="w-6 h-6 fill-current text-white">
         <use href="/sprite.svg#ReadMore" />
       </svg>
     </button>
