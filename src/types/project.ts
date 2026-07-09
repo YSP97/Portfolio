@@ -9,6 +9,8 @@ export interface Project {
   thumbnail?: string;
   techStack: string[];
   slides: Slides[];
+  github?: string;
+  deployLink?: string;
 }
 
 export interface Features {

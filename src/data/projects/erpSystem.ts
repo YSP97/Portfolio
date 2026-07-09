@@ -10,6 +10,8 @@ export const erpSystem: Project = {
         teamSize: '총 6인',
         techStack: ['React', 'TailwindCSS','TypeScript', 'Express.js', 'React-Router-Dom', 'MySQL', 'Python' ],
         summary: 'Jira 티켓 관리와 온보딩을 위한 ERP 시스템',
+        github: '/',
+        deployLink:'/',
         features: [
             {
                 title: '티켓 관리 대시보드',
@@ -37,7 +39,7 @@ export const erpSystem: Project = {
                     { type: 'stacks',items: [
                         {
                             name: 'React',
-                            icon: '',
+                            icon: '../../../public/YSPlogo.svg',
                             description: '대량의 티켓 데이터를 엑셀처럼 인라인으로 직접 수정하고 추가할 때, 화면 전체를 다시 그리지 않고 변경된 데이터의 행(Row)만 가상 DOM을 통해 선별적으로 렌더링함으로써 브라우저 부하를 최소화하고 빠른 반응 속도를 확보.'
                         },
                         {
@@ -66,7 +68,7 @@ export const erpSystem: Project = {
                         description: '티켓, 사용자, 권한 등 구조화된 관계형 데이터를 안정적으로 저장하고 조회하기 위해 선택'
                         },
                         {
-                        name: 'python', // 이미지 표기대로 소문자 처리 (원하시면 Python으로 수정 가능)
+                        name: 'Python', // 이미지 표기대로 소문자 처리 (원하시면 Python으로 수정 가능)
                         icon: '/icons/python.svg',
                         description: '사내 보안 정책(DRM)으로 엑셀 파일 접근이 제한된 환경에서, xlwings로 엑셀 데이터를 직접 읽어 DB에 전달하는 자동화 파이프라인 구축을 위해 선택'
                         }
@@ -108,9 +110,9 @@ export const erpSystem: Project = {
                     },
                     {
                         type: 'paragraphBox',
-                        icon: '/',
+                        icon: '📝',
                         paragraph: {
-                            title: '모달 기반 CRUD + 수정 모드 전환',
+                            title: '모달 기반 CRUD + 수정 `모드 전환',
                             paragraph: '테이블 셀을 클릭하면 바로 입력 가능한 인라인 에디터로 전환. 수정·추가·삭제를 한 화면에서 처리'
                         }
                     }
