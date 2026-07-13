@@ -53,16 +53,19 @@ export default function Skills() {
         My <span className="font-extrabold">Skills</span>
       </h1>
 
-      <div className="flex flex-wrap gap-10 justify-center mt-10 max-w-[1100px]">
-        {skillsData.map((skill, index) => (
-          <Skill
-            key={index}
-            ref={(el) => (skillRefs.current[index] = el!)}
-            icon={skill.icon}
-            name={skill.name}
-          />
-        ))}
-      </div>
+      <div
+  className="grid gap-8 justify-items-center mt-10 w-full max-w-[1200px]"
+  style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))' }}
+>
+  {skillsData.map((skill, index) => (
+    <Skill
+      key={index}
+      ref={(el) => (skillRefs.current[index] = el!)}
+      icon={skill.icon}
+      name={skill.name}
+    />
+  ))}
+</div>
     </section>
   );
 }
