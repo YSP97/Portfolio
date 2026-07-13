@@ -16,11 +16,11 @@ export default function Skills() {
           if (entry.isIntersecting) {
             tl.fromTo(
               skillRefs.current,
-              { opacity: 0, y: 50 },
+              { opacity: 0, y: 30 },
               {
                 opacity: 1,
                 y: 0,
-                duration: 2,
+                duration: 0.6,
                 ease: 'power3.out',
                 stagger: 0.2,
               }
@@ -53,19 +53,18 @@ export default function Skills() {
         My <span className="font-extrabold">Skills</span>
       </h1>
 
-      <div
-  className="grid gap-8 justify-items-center mt-10 w-full max-w-[1200px]"
-  style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))' }}
->
-  {skillsData.map((skill, index) => (
-    <Skill
-      key={index}
-      ref={(el) => (skillRefs.current[index] = el!)}
-      icon={skill.icon}
-      name={skill.name}
-    />
-  ))}
-</div>
+     <div
+      className="grid grid-cols-2 gap-4 md:gap-8 justify-center mt-10 w-full max-w-[1200px] md:[grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),180px))]"
+    >
+      {skillsData.map((skill, index) => (
+        <Skill
+          key={index}
+          ref={(el) => (skillRefs.current[index] = el!)}
+          icon={skill.icon}
+          name={skill.name}
+        />
+      ))}
+    </div>
     </section>
   );
 }
