@@ -15,6 +15,23 @@ export default function Modal() {
   const slides = modalContent?.slides ?? [];
   const totalSlides = slides.length;
 
+  useEffect(() => {
+      if (isOpen) {
+        // 스크롤바 너비만큼 padding을 줘서 레이아웃 시프트 방지
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        document.body.style.overflow = 'hidden';
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+      } else {
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+      }
+
+      return () => {
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+      };
+    }, [isOpen]);
+
   // 모달 열릴 때 슬라이드 인덱스 초기화 + 등장 애니메이션
   useEffect(() => {
     if (isOpen && modalContentRef.current) {
@@ -61,7 +78,7 @@ export default function Modal() {
     >
       <div
         ref={modalContentRef}
-        className="flex flex-col bg-white w-full max-w-4xl h-[85vh] shadow-2xl"
+        className="flex flex-col bg-white w-full max-w-4xl h-[85vh] shadow-2xl overflow-hidden rounded-lg"
         onClick={(e) => e.stopPropagation()}
       >
         {/* 헤더 영역 - 그대로 유지 */}

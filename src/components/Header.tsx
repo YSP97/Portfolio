@@ -5,11 +5,27 @@ import { gsap } from 'gsap';
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
-  const [resume, setResume] = useState(null);
+  const [resume, setResume] = useState('/assets/resume.pdf');
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
+  
+
+  useEffect(() => {
+      if (!menuOpen) return;
+
+      const handleClickOutside = (e: MouseEvent) => {
+        if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+          setMenuOpen(false);
+        }
+      };
+
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, [menuOpen]);
 
 
   // GSAP 애니메이션 처리
@@ -58,8 +74,8 @@ export default function Header() {
         </div>
         <a
           href={resume}
-          download="resume.pdf"
-          className="flex flex-row items-center gap-2 bg-black text-white rounded py-2 px-4 hover:bg-zinc-600 max-md:hidden"
+          download="프론트엔드_박윤선_이력서.pdf"
+          className="flex flex-row items-center gap-2 bg-black text-white rounded py-2 px-4 hover:bg-zinc-600 cursor-pointer max-md:hidden"
           aria-label="이력서 다운로드"
           target="_blank"
           rel="noopener noreferrer"
@@ -125,8 +141,8 @@ export default function Header() {
         </Link>
         <a
           href={resume}
-          download="resume.pdf"
-          className="text-lg font-semibold bg-black text-white rounded py-2 px-4 hover:bg-zinc-600"
+          download="프론트엔드_박윤선_이력서.pdf"
+          className="text-lg font-semibold bg-black text-white rounded py-2 px-4 hover:bg-zinc-600 cursor-pointer"
           aria-label="이력서 다운로드"
           onClick={() => setMenuOpen(false)}
           target="_blank"

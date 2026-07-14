@@ -38,11 +38,20 @@ const Experience = forwardRef<HTMLDivElement, { data: ExperienceItem }>(
             />
             <span className="font-semibold">{data.name}</span>
           </div>
-          <span className="font-sora md:ml-auto md:mt-0 mt-2 text-xs text-zinc-300">
+          <span className="font-sora md:ml-auto md:mt-0 mt-2 text-xs text-gray-300">
             {data.peroid}
           </span>
         </div>
-        <p className="text-zinc-300">{data.description}</p>
+        <p className="text-white">{data.description}</p>
+        {
+          data.desc2 && (
+            <ul className='text-sm font-sora text-gray-300'>
+              {data.desc2.map((desc, id) => (
+                <li key={id} className="list-disc list-inside space-y-1">{desc}</li>
+              ))}
+            </ul>
+          )
+        }
       </div>
     );
   }

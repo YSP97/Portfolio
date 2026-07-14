@@ -3,9 +3,9 @@ import { ExperienceItem } from "@/types/data";
 
 export const ExperiencesData: ExperienceItem[] = [
     {
-        icon: '/assets/girl.svg',
+        icon: 'src/assets/Icon/ptkorea.png',
         name: 'PTKOREA',
-        description: '웹 페이지 제작 및 QA, ERD 시스템 프론트엔드 개발 인턴',
+        description: '웹 페이지 제작 및 QA, ERP 시스템 프론트엔드 개발 인턴',
         peroid: '2025년 5월 26일 - 2026년 2월 25일(9개월)',
         desc2: [
             'AEM을 이용한 웹 페이지 제작 및 QA',
@@ -25,5 +25,12 @@ export const ExperiencesData: ExperienceItem[] = [
             '팀 내 온보딩 웹 페이지 개발'
         ],
         id: '02'
+    },
+    {
+        icon: 'src/assets/Icon/likelion.png',
+        name: '멋쟁이사자처럼',
+        description: '프론트엔드 스쿨 10기 수료',
+        peroid: '2024년 4월 - 2024년 9월',
+        id: '03'
     },
 ]
