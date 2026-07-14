@@ -1,8 +1,8 @@
 import { forwardRef } from 'react';
 import { gsap } from 'gsap';
-import { Experiences } from '@/types/data';
+import { ExperienceItem } from '@/types/data';
 
-const Experience = forwardRef<HTMLDivElement, { data: Experiences }>(
+const Experience = forwardRef<HTMLDivElement, { data: ExperienceItem }>(
   ({ data }, ref) => {
     const handleMouseEnter = (el: HTMLDivElement) => {
       gsap.to(el, {
@@ -29,7 +29,7 @@ const Experience = forwardRef<HTMLDivElement, { data: Experiences }>(
         onMouseEnter={(e) => handleMouseEnter(e.currentTarget)}
         onMouseLeave={(e) => handleMouseLeave(e.currentTarget)}
       >
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-1">
           <div className="flex items-center gap-7 max-md:gap-3">
             <img
               src={data.icon}
@@ -38,7 +38,7 @@ const Experience = forwardRef<HTMLDivElement, { data: Experiences }>(
             />
             <span className="font-semibold">{data.name}</span>
           </div>
-          <span className="font-sora md:ml-auto md:mt-0 mt-2 text-zinc-300">
+          <span className="font-sora md:ml-auto md:mt-0 mt-2 text-xs text-zinc-300">
             {data.peroid}
           </span>
         </div>

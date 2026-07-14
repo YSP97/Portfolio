@@ -3,7 +3,7 @@ export interface Project {
     title: string;
     description: string;
     stack: string[];
-    thumnail: string;
+    thumbnail: string;
     link?: string;
     github?: string;
 }
@@ -13,12 +13,13 @@ export interface AboutMe{
     description: string;
 }
 
-export interface Experiences{
+export interface ExperienceItem{
     id: string;
     icon: string;
     name: string;
     peroid: string;
     description: string;
+    desc2?: string[];
 }
 
 export interface Skills{

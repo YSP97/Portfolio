@@ -1,9 +1,11 @@
 import { useEffect, useState, useRef } from 'react';
 import Experience from '../components/Experience.tsx';
 import { gsap } from 'gsap';
+import { ExperienceItem } from '@/types/data.ts';
+import { ExperiencesData } from '@/data/ExperiencesData.ts';
 
 export default function Experiences() {
-  const [experience, setExperience] = useState([]);
+  const [experience, setExperience] = useState<ExperienceItem[]>(ExperiencesData);
   const experienceRefs = useRef<HTMLDivElement[]>([]);
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
@@ -49,7 +51,7 @@ export default function Experiences() {
       <h1 className="text-5xl font-sora max-md:flex max-md:flex-col max-md:gap-4 items-center">
         My <span className="font-extrabold">Experience</span>
       </h1>
-      <div className="py-10 flex flex-col gap-8 justify-center px-4">
+      <div className="py-10 flex flex-col gap-8 justify-center px-12 w-full items-center">
         {experience.map((item, index) => (
           <Experience
             data={item}
