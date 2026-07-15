@@ -33,7 +33,7 @@ const Experience = forwardRef<HTMLDivElement, { data: ExperienceItem }>(
           <div className="flex items-center gap-7 max-md:gap-3">
             <img
               src={data.icon}
-              className="w-10 rounded-full"
+              className="w-10 h-10 rounded-full"
               alt={`${data.icon} icon`}
             />
             <span className="font-semibold">{data.name}</span>

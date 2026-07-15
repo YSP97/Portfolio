@@ -31,6 +31,14 @@ export const ExperiencesData: ExperienceItem[] = [
         name: '멋쟁이사자처럼',
         description: '프론트엔드 스쿨 10기 수료',
         peroid: '2024년 4월 - 2024년 9월',
-        id: '03'
+        id: '03',
+        desc2: [
+            '기초 figma 학습',
+            'HTML/CSS 학습 및 코어 JavaScript 학습',
+            'React 학습',
+            '접근성을 고려한 개발 학습',
+            '바닐라 자바스크립트와 Sass를 적용한 팀 프로젝트',
+            'React.js를 활용한 팀 프로젝트'
+        ]
     },
 ]
