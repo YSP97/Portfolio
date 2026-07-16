@@ -1,3 +1,5 @@
+import { StackName } from '@/constants/stackIcons';
+
 export interface Project {
   id: string;
   title: string;
@@ -39,6 +41,7 @@ export type SlideBlock =
     type: 'badge'; 
     text: string;
     description?: string;
+    variant?: 'before' | 'after';
 
   }
 
@@ -59,4 +62,11 @@ export interface FlowChartItem {
   caption?: string;
   highlight?: boolean;
   note?: string; 
+}
+
+
+interface StacksBlockItem {
+  name: string;
+  description: string;
+  icon?: StackName;
 }

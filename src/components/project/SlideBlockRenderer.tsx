@@ -1,8 +1,14 @@
 import { SlideBlock } from '@/types/project';
+import {StackIcon} from '@/components/StackIcon';
 
 interface SlideBlockRendererProps {
   block: SlideBlock;
 }
+
+const BADGE_VARIANT_STYLES: Record<string, string> = {
+  before: 'bg-zinc-200 text-zinc-600',
+  after: 'bg-blue-600 text-white',
+};
 
 export default function SlideBlockRenderer({ block }: SlideBlockRendererProps) {
   switch (block.type) {
@@ -18,7 +24,7 @@ export default function SlideBlockRenderer({ block }: SlideBlockRendererProps) {
     case 'image':
       return (
         <div className="my-4 flex flex-col items-center">
-          <div className="w-full max-h-[300px] overflow-hidden rounded bg-zinc-800 flex items-center justify-center">
+          <div className="w-full overflow-hidden rounded bg-zinc-800 flex items-center justify-center">
             {/* 실제 이미지가 없을 때 예시 플레이스홀더 처리 */}
             {block.src === '/' ? (
               <div className="p-8 text-zinc-500 text-sm text-center">
@@ -82,30 +88,35 @@ export default function SlideBlockRenderer({ block }: SlideBlockRendererProps) {
 
     case 'stacks':
       return (
-        <div className="grid grid-cols-3 max-sm:grid-cols-2 gap-3 my-3">
-          {block.items.map((item, idx) => (
-            <div key={idx} className="p-3 flex gap-3 max-sm:max-w-[200px]">
-              {/* {item.icon && 
-              <svg className="w-6 h-6 fill-current text-white">
-                <use href="/sprite.svg#ReadMore" />
-              </svg>
-              } */}
-              <div>
-                <span className=" font-bold flex justify-center">{item.name}</span>
-                <p className="text-xs text-zinc-600 leading-relaxed">{item.description}</p>
-              </div>
-            </div>
-          ))}
+         <div className="grid grid-cols-3 max-sm:grid-cols-2 gap-3 my-3">
+      {block.items.map((item, idx) => (
+        <div key={idx} className="p-3 flex flex-col gap-3 max-sm:max-w-[200px]">
+          {item.icon && (
+            <StackIcon name={item.icon} size={24} className="text-black shrink-0 w-16 h-16 mx-auto" />
+          )}
+          <div>
+            <span className="font-bold flex justify-center">{item.name}</span>
+            <p className="text-xs text-zinc-600 leading-relaxed">{item.description}</p>
+          </div>
         </div>
+      ))}
+    </div>
       );
 
     case 'badge':
-      return (
-        <div className="inline-flex flex-col bg-zinc-800 border border-zinc-700 rounded px-2.5 py-1 m-1">
-          <span className="text-xs font-medium text-zinc-200">{block.text}</span>
-          {block.description && <span className="text-[10px] text-zinc-400">{block.description}</span>}
-        </div>
-      );
+      const variantClass = BADGE_VARIANT_STYLES[block.variant ?? 'before'];
+  return (
+    <div className="flex items-center gap-2 my-1.5">
+      <span className={`inline-block rounded-full px-3 py-1 text-xs font-semibold whitespace-nowrap ${variantClass}`}>
+        {block.text}
+      </span>
+      {block.description && (
+        <span className="text-xs text-zinc-600">
+          -- {block.description}
+        </span>
+      )}
+    </div>
+  );
 
     default:
       return null;

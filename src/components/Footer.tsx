@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="flex z-50">
         <div className="font-semibold max-md:hidden">Yunseon's Portfolio</div>
       </div>
-      <div className="font-light">@ 2025 Yunseon Park</div>
+      <div className="font-light">@ 2026 Yunseon Park</div>
     </div>
   );
 }

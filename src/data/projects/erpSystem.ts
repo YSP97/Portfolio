@@ -39,37 +39,37 @@ export const erpSystem: Project = {
                     { type: 'stacks',items: [
                         {
                             name: 'React',
-                            icon: '../../../public/YSPlogo.svg',
+                            icon: 'React',
                             description: '대량의 티켓 데이터를 엑셀처럼 인라인으로 직접 수정하고 추가할 때, 화면 전체를 다시 그리지 않고 변경된 데이터의 행(Row)만 가상 DOM을 통해 선별적으로 렌더링함으로써 브라우저 부하를 최소화하고 빠른 반응 속도를 확보.'
                         },
                         {
                         name: 'TailwindCSS',
-                        icon: '/icons/tailwind.svg',
+                        icon: 'TailwindCSS',
                         description: '클래스 기반의 스타일링으로 CSS를 따로 작성할 필요가 없으며 반응형 디자인에 유리하여 선택.'
                         },
                         {
                         name: 'TypeScript',
-                        icon: '/icons/typescript.svg',
+                        icon: 'TypeScript',
                         description: '수많은 컬럼과 복잡한 객체 구조를 가진 티켓 데이터를 다룰 때, 명확한 인터페이스를 정의하여 데이터 누락이나 타입 불일치로 인한 런타임 에러를 사전에 방지'
                         },
                         {
                         name: 'Express.js',
-                        icon: '/icons/express.svg',
+                        icon: 'Express',
                         description: 'Node.js 기반의 경량 백엔드 프레임워크로, REST API 설계가 직관적이고 유연한 미들웨어 구성이 가능하여 선택'
                         },
                         {
                         name: 'React-Router-Dom',
-                        icon: '/icons/react-router.svg',
+                        icon: 'Reactrouter',
                         description: '소규모의 프로젝트에 손쉽게 데이터 베이스 관리가 가능하여 선택'
                         },
                         {
                         name: 'MySQL',
-                        icon: '/icons/mysql.svg',
+                        icon: 'MySQL',
                         description: '티켓, 사용자, 권한 등 구조화된 관계형 데이터를 안정적으로 저장하고 조회하기 위해 선택'
                         },
                         {
-                        name: 'Python', // 이미지 표기대로 소문자 처리 (원하시면 Python으로 수정 가능)
-                        icon: '/icons/python.svg',
+                        name: 'Python',
+                        icon: 'Python',
                         description: '사내 보안 정책(DRM)으로 엑셀 파일 접근이 제한된 환경에서, xlwings로 엑셀 데이터를 직접 읽어 DB에 전달하는 자동화 파이프라인 구축을 위해 선택'
                         }
                     ]
@@ -83,12 +83,12 @@ export const erpSystem: Project = {
                 blocks: [
                     {
                         type: 'image',
-                        src: '/',
+                        src: 'src/assets/Project/erp/architecture.png',
                         caption: '아키텍쳐'
                     },
                     {
                         type: 'image',
-                        src: '/',
+                        src: 'src/assets/Project/erp/erd.png',
                         caption: 'ERD'
                     }
 
@@ -105,7 +105,7 @@ export const erpSystem: Project = {
                     },
                     {
                         type: 'image',
-                        src: '/',
+                        src: 'src/assets/Project/erp/erp0.png',
                         caption: '※ 실제 화면이 아닌 재구성한 와이어프레임 입니다.'
                     },
                     {
@@ -130,7 +130,7 @@ export const erpSystem: Project = {
                     },
                     {
                         type: 'image',
-                        src: '/',
+                        src: 'src/assets/Project/erp/erp1.png',
                         caption: '※ 실제 화면이 아닌 재구성한 와이어프레임 입니다.'
                     },
                     {
@@ -172,7 +172,7 @@ export const erpSystem: Project = {
                     },
                     {
                         type: 'image',
-                        src: '/',
+                        src: 'src/assets/Project/erp/erp4.png',
                         caption: '※ 실제 화면이 아닌 재구성한 와이어프레임 입니다.'
                     },
                     {
@@ -207,7 +207,7 @@ export const erpSystem: Project = {
                     },
                     {
                         type: 'image',
-                        src: '/',
+                        src: 'src/assets/Project/erp/erp5.png',
                         caption: '※ 실제 화면이 아닌 재구성한 와이어프레임 입니다.'
                     },
                     {
@@ -239,7 +239,7 @@ export const erpSystem: Project = {
                     },
                     {
                         type: 'image',
-                        src: '/',
+                        src: 'src/assets/Project/erp/erp6.png',
                         caption: '※ 실제 화면이 아닌 재구성한 와이어프레임 입니다.'
                     },
                     {
@@ -263,7 +263,7 @@ export const erpSystem: Project = {
                         icon: '/',
                         paragraph: {
                         title: '비개발 직군을 고려한 운영 효율화 및 안정성 확보',
-                        paragraph: '운영 가이드가 추가되거나 수정될 때 개발자의 배포 공수 없이, JSON 파일 수정만으로 가이드북 전체가 최신화되는 환경을 제공하여 협업 리소스를 절감'
+                        paragraph: '운영 가이드가 추가되거나 수정될 때 구조화된 JSON으로 손쉬운 콘텐츠 업데이트로 협업 리소스를 절감'
                         }
                     }
                 ]
@@ -299,8 +299,24 @@ export const erpSystem: Project = {
                         text: '수동으로 입력해야 했던 대량의 티켓 데이터를 자동 업로드할 수 있는 파이프라인 구축.'
                     },
                     {
+                        type: 'badge',
+                        text: 'Before',
+                        description: '데이터 수급 3가지 시도 - 모두 한계 존재',
+                        variant: 'before',
+                        },
+                    {
                         type: 'image',
-                        src: '/'
+                        src: 'src/assets/Project/erp/before.png'
+                    },
+                    {
+                        type: 'badge',
+                        text: 'After',
+                        description: 'xlwings 우회 파이프라인',
+                        variant: 'after',
+                        },
+                    {
+                        type: 'image',
+                        src: 'src/assets/Project/erp/after.png'
                     }
 
                 ]
