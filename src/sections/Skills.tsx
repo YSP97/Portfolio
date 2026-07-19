@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import Skill from '../components/Skill.tsx';
+import { Skill } from '@/components';
 import { gsap } from 'gsap';
 import { skillsData } from '@/data/skillsData.ts';
 
@@ -53,18 +53,16 @@ export default function Skills() {
         My <span className="font-extrabold">Skills</span>
       </h1>
 
-     <div
-      className="grid grid-cols-2 gap-4 md:gap-8 justify-center mt-10 w-full max-w-[1200px] md:[grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),180px))]"
-    >
-      {skillsData.map((skill, index) => (
-        <Skill
-          key={index}
-          ref={(el) => (skillRefs.current[index] = el!)}
-          icon={skill.icon}
-          name={skill.name}
-        />
-      ))}
-    </div>
+      <div className="grid grid-cols-2 gap-4 md:gap-8 justify-center mt-10 w-full max-w-[1200px] md:[grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),180px))]">
+        {skillsData.map((skill, index) => (
+          <Skill
+            key={index}
+            ref={(el) => (skillRefs.current[index] = el!)}
+            icon={skill.icon}
+            name={skill.name}
+          />
+        ))}
+      </div>
     </section>
   );
 }

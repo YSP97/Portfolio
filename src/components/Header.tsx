@@ -4,29 +4,27 @@ import { gsap } from 'gsap';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef(null);
+  const menuRef = useRef<HTMLDivElement>(null);
   const [resume, setResume] = useState('/assets/resume.pdf');
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
-  
 
   useEffect(() => {
-      if (!menuOpen) return;
+    if (!menuOpen) return;
 
-      const handleClickOutside = (e: MouseEvent) => {
-        if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
-          setMenuOpen(false);
-        }
-      };
+    const handleClickOutside = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
 
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    }, [menuOpen]);
-
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuOpen]);
 
   // GSAP 애니메이션 처리
   useEffect(() => {

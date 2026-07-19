@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import { StackItem } from '../../../types/project';
+import { StackItem } from '@/types/project';
 
 export default function StacksBlock({ items }: { items: StackItem[] }) {
   return (
@@ -8,7 +7,7 @@ export default function StacksBlock({ items }: { items: StackItem[] }) {
         <div key={item.name} className="flex gap-3 items-start">
           {item.icon && (
             <div className="relative w-6 h-6 shrink-0 mt-0.5">
-              <Image src={item.icon} alt={item.name} fill className="object-contain" />
+              <img src={item.icon} alt={item.name} className="object-contain" />
             </div>
           )}
           <div>

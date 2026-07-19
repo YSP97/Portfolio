@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import ContactButton from './ContactButton.tsx';
+import { ContactButton } from '@/components';
 import { gsap } from 'gsap';
 
 export default function Contacts() {

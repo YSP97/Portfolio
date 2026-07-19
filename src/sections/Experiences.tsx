@@ -1,11 +1,12 @@
 import { useEffect, useState, useRef } from 'react';
-import Experience from '../components/Experience.tsx';
+import { Experience } from '@/components';
 import { gsap } from 'gsap';
 import { ExperienceItem } from '@/types/data.ts';
 import { ExperiencesData } from '@/data/ExperiencesData.ts';
 
 export default function Experiences() {
-  const [experience, setExperience] = useState<ExperienceItem[]>(ExperiencesData);
+  const [experience, setExperience] =
+    useState<ExperienceItem[]>(ExperiencesData);
   const experienceRefs = useRef<HTMLDivElement[]>([]);
   const sectionRef = useRef<HTMLDivElement | null>(null);
 

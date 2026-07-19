@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef } from 'react';
-import QandA from '../components/QandA.tsx';
+import { QandA } from '@/components';
 import { gsap } from 'gsap';
 import { aboutMeData } from '@/data/aboutMeData.ts';
 
 export default function AboutMe() {
-  console.log(aboutMeData)
+  console.log(aboutMeData);
   const [data, setData] = useState(aboutMeData);
   const qandaRefs = useRef<HTMLDivElement[]>([]);
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -43,7 +43,6 @@ export default function AboutMe() {
       }
     };
   }, [aboutMeData]);
-
 
   return (
     <section

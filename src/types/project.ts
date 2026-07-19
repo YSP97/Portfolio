@@ -1,4 +1,4 @@
-import { StackName } from '@/constants/stackIcons';
+import { StackName, AllStackName } from '@/constants/stackIcons';
 
 export interface Project {
   id: string;
@@ -16,10 +16,9 @@ export interface Project {
 }
 
 export interface Features {
- title: string;
- items: string[];
+  title: string;
+  items: string[];
 }
-
 
 export interface Slides {
   id: string;
@@ -28,30 +27,33 @@ export interface Slides {
   blocks: SlideBlock[];
 }
 
-
-export type SlideBlock = 
+export type SlideBlock =
   | { type: 'paragraph'; text: string }
-  | { type: 'H2'; text: string}
-  | { type: 'H3'; text: string}
+  | { type: 'H2'; text: string }
+  | { type: 'H3'; text: string }
   | { type: 'image'; src: string; caption?: string; size?: 'contain' | 'cover' }
   | { type: 'paragraphBox'; icon?: string; paragraph: string | ParagraphItem }
   | { type: 'flowChart'; title?: string; items: FlowChartItem[] }
   | { type: 'stacks'; items: StackItem[] }
   | {
-    type: 'badge'; 
-    text: string;
-    description?: string;
-    variant?: 'before' | 'after';
+      type: 'badge';
+      text: string;
+      description?: string;
+      variant?: 'before' | 'after';
+    }
+  | {
+      type: 'circleSummary';
+      title: string;
+      circles: string[];
+    };
 
-  }
-
-  export interface StackItem {
+export interface StackItem {
   name: string;
   description: string;
-  icon?: string;
+  icon?: AllStackName;
 }
 
-export interface ParagraphItem{
+export interface ParagraphItem {
   title: string;
   paragraph: string;
 }
@@ -61,9 +63,8 @@ export interface FlowChartItem {
   sublabel?: string;
   caption?: string;
   highlight?: boolean;
-  note?: string; 
+  note?: string;
 }
-
 
 interface StacksBlockItem {
   name: string;

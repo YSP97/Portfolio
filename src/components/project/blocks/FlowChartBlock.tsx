@@ -1,26 +1,5 @@
-import { ArrowRight, ArrowDown } from 'lucide-react';
-import { FlowChartItem } from '../../../types/project';
-
-function StepBox({ item }: { item: FlowChartItem }) {
-  return (
-    <div className="flex flex-col items-center text-center w-[110px] shrink-0">
-      <div
-        className={`rounded-lg px-3 py-2 w-full ${
-          item.highlight ? 'bg-blue-500 text-white' : 'bg-zinc-100 text-zinc-700'
-        }`}
-      >
-        <p className="text-xs font-medium">{item.label}</p>
-        {item.sublabel && (
-          <p className="text-[11px] opacity-80 mt-0.5">{item.sublabel}</p>
-        )}
-      </div>
-      {item.note && <p className="text-[11px] text-zinc-400 mt-1">{item.note}</p>}
-      {item.caption && (
-        <p className="text-[11px] text-zinc-400 mt-1">{item.caption}</p>
-      )}
-    </div>
-  );
-}
+import { FlowChartItem } from '@/types/project';
+import StepBox from './StepBox';
 
 function chunk<T>(arr: T[], size: number): T[][] {
   const out: T[][] = [];
@@ -51,9 +30,6 @@ export default function FlowChartBlock({
             {row.map((item, j) => (
               <div key={j} className="flex items-center gap-2">
                 <StepBox item={item} />
-                {j < row.length - 1 && (
-                  <ArrowRight size={14} className="text-zinc-300 shrink-0 mt-4" />
-                )}
               </div>
             ))}
           </div>
@@ -65,7 +41,6 @@ export default function FlowChartBlock({
         {items.map((item, i) => (
           <div key={i} className="flex flex-col items-center gap-2">
             <StepBox item={item} />
-            {i < items.length - 1 && <ArrowDown size={14} className="text-zinc-300" />}
           </div>
         ))}
       </div>

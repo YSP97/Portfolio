@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { gsap } from 'gsap';
-import useContactStore from '../stores/useContactStore.tsx';
+import useContactStore from '@/stores/useContactStore.tsx';
 
 interface ContactButtonProps {
   link?: string;

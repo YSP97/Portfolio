@@ -1,7 +1,4 @@
-'use client';
-
 import { useState } from 'react';
-import Image from 'next/image';
 
 export default function ImageBlock({
   src,
@@ -18,10 +15,9 @@ export default function ImageBlock({
     <>
       <figure className="cursor-zoom-in" onClick={() => setIsZoomed(true)}>
         <div className="relative w-full h-64 rounded-lg overflow-hidden border border-zinc-100 bg-zinc-50">
-          <Image
+          <img
             src={src}
             alt={caption ?? ''}
-            fill
             className={size === 'contain' ? 'object-contain' : 'object-cover'}
           />
         </div>
@@ -38,7 +34,7 @@ export default function ImageBlock({
           onClick={() => setIsZoomed(false)}
         >
           <div className="relative w-full h-full max-w-5xl">
-            <Image src={src} alt={caption ?? ''} fill className="object-contain" />
+            <img src={src} alt={caption ?? ''} className="object-contain" />
           </div>
         </div>
       )}

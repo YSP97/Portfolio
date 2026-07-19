@@ -1,4 +1,4 @@
-import type { IconType } from "react-icons";
+import type { IconType } from 'react-icons';
 import {
   SiReact,
   SiTypescript,
@@ -20,14 +20,14 @@ import {
   SiVite,
   SiGsap,
   SiExpress,
-  SiReactrouter
-} from "react-icons/si";
+  SiReactrouter,
+} from 'react-icons/si';
 
 export const STACK_ICON_MAP = {
   React: SiReact,
   TypeScript: SiTypescript,
   TailwindCSS: SiTailwindcss,
-  "Next.js": SiNextdotjs,
+  'Next.js': SiNextdotjs,
   JavaScript: SiJavascript,
   HTML: SiHtml5,
   CSS: SiCss,
@@ -41,14 +41,16 @@ export const STACK_ICON_MAP = {
   Vercel: SiVercel,
   Pocketbase: SiPocketbase,
   Netlify: SiNetlify,
-  Vite:SiVite,
-  Gsap:SiGsap,
-  Express:SiExpress,
-  Reactrouter:SiReactrouter
+  Vite: SiVite,
+  Gsap: SiGsap,
+  Express: SiExpress,
+  Reactrouter: SiReactrouter,
 } as const satisfies Record<string, IconType>;
 
 export type StackName = keyof typeof STACK_ICON_MAP;
+export type SpriteName = keyof typeof SPRITE_ICON_MAP;
+export type AllStackName = StackName | SpriteName;
 
 export const SPRITE_ICON_MAP = {
-  Zustand: "icon-zustand",
+  Zustand: 'icon-zustand',
 } as const;

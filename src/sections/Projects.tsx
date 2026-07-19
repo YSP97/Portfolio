@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import ProjectComponent from '../components/Project.tsx';
+import { ProjectBox } from '@/components';
 import { gsap } from 'gsap';
 import { projectData } from '@/data/projectData';
 import { Project } from '@/types/project';
@@ -18,7 +18,7 @@ export default function Projects() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const targets = projectRefs.current.filter(Boolean);
-            
+
             tl.fromTo(
               targets,
               { opacity: 0, y: 50 },
@@ -61,7 +61,7 @@ export default function Projects() {
       {projects.length > 0 ? (
         projects.map((project, index) => (
           <div key={project.id}>
-            <ProjectComponent
+            <ProjectBox
               index={index}
               projectData={project}
               ref={(el) => {
