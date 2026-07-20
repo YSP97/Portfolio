@@ -47,8 +47,9 @@ export const STACK_ICON_MAP = {
   Reactrouter:SiReactrouter
 } as const satisfies Record<string, IconType>;
 
-export type StackName = keyof typeof STACK_ICON_MAP;
 
 export const SPRITE_ICON_MAP = {
   Zustand: "icon-zustand",
 } as const;
+
+export type StackName = keyof typeof STACK_ICON_MAP | keyof typeof SPRITE_ICON_MAP;

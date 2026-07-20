@@ -1,6 +1,8 @@
 import { Project } from "@/types/project";
-import { erpSystem } from "./projects/erpSystem";
+import { erpSystem, fitculator,jaksimharu } from "./projects";
 
 export const projectData : Project[] = [
-    erpSystem
+    erpSystem,
+    fitculator,
+    jaksimharu
 ]

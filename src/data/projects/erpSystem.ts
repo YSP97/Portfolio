@@ -10,8 +10,6 @@ export const erpSystem: Project = {
         teamSize: '총 6인',
         techStack: ['React', 'TailwindCSS','TypeScript', 'Express.js', 'React-Router-Dom', 'MySQL', 'Python' ],
         summary: 'Jira 티켓 관리와 온보딩을 위한 ERP 시스템',
-        github: '/',
-        deployLink:'/',
         features: [
             {
                 title: '티켓 관리 대시보드',

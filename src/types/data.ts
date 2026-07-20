@@ -1,13 +1,3 @@
-export interface Project {
-    id: string;
-    title: string;
-    description: string;
-    stack: string[];
-    thumbnail: string;
-    link?: string;
-    github?: string;
-}
-
 export interface AboutMe{
     title: string;
     description: string;

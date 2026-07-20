@@ -8,6 +8,8 @@ interface StackIconProps {
 }
 
 export function StackIcon({ name, size = 24, className }: StackIconProps) {
+  console.log("StackIcon에 들어온 name 값:", name, "타입:", typeof name);
+  console.log("현재 SPRITE_ICON_MAP 구조:", SPRITE_ICON_MAP);
   // react-icons에 있는 경우
   if (name in STACK_ICON_MAP) {
     const Icon = STACK_ICON_MAP[name as keyof typeof STACK_ICON_MAP];
