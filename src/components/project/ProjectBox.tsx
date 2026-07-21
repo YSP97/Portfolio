@@ -44,7 +44,7 @@ const ProjectBox = forwardRef<HTMLDivElement, ProjectProps>(
 
           <p className="text-sm">{projectData.summary}</p>
 
-          <div className="flex flex-wrap gap-2 max-sm:mt-3">
+          <div className="flex flex-wrap gap-2 max-sm:mt-3 max-w-[500px]">
             {projectData.techStack.map((tech) => (
               <span
                 key={tech}

@@ -21,8 +21,10 @@ export const ExperiencesData: ExperienceItem[] = [
         peroid: '2025년 1월 31일 - 2025년 2월 28일(1개월)',
         desc2: [
             '프론트엔드 : Next.js / TailwindCSS/ Zustand / Vercel(배포)',
-            'Jira 티켓 관리 ERP 시스템 개발',
-            '팀 내 온보딩 웹 페이지 개발'
+            '프로젝트 진행 총괄 팀장',
+            'B2C 웹 페이지 SEO(검색엔진 최적화)',
+            '상태 관리 최적화',
+            'GA4를 활용한 지표 데이터 tracking 설계 및 구현'
         ],
         id: '02'
     },

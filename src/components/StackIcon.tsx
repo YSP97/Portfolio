@@ -26,7 +26,7 @@ export default function StackIcon({
     const spriteId = SPRITE_ICON_MAP[name as keyof typeof SPRITE_ICON_MAP];
     return (
       <svg width={size} height={size} className={className}>
-        <use href={`/assets/sprite.svg#${spriteId}`} />
+        <use href={`/sprite.svg#${spriteId}`} />
       </svg>
     );
   }

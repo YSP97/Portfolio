@@ -18,9 +18,9 @@ export default function SlideImage({ block }: SlideImageProps) {
 
   return (
     <>
-      <div className="my-4 flex flex-col items-center">
+      <div className="my-4 flex flex-col items-center mx-auto">
         <div
-          className={`w-full overflow-hidden rounded bg-zinc-800 flex items-center justify-center ${
+          className={`w-full overflow-hidden rounded bg-white flex items-center justify-center ${
             !isPlaceholder ? 'cursor-zoom-in' : ''
           }`}
           onClick={() => !isPlaceholder && setIsExpanded(true)}
@@ -33,7 +33,7 @@ export default function SlideImage({ block }: SlideImageProps) {
             <img
               src={block.src}
               alt={block.caption || 'slide image'}
-              className={`w-full h-full ${block.size === 'cover' ? 'object-cover' : 'object-contain'}`}
+              className="max-h-[50vh] w-auto h-auto object-contain"
             />
           )}
         </div>
@@ -52,7 +52,7 @@ export default function SlideImage({ block }: SlideImageProps) {
             <img
               src={block.src}
               alt={block.caption || 'slide image'}
-              className="w-full h-full object-contain"
+              className="max-w-[90vw] max-h-[85vh] w-auto h-auto object-contain"
             />
             <button
               onClick={() => setIsExpanded(false)}

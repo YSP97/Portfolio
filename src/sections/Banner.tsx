@@ -16,7 +16,7 @@ export default function Banner() {
       {
         opacity: 1,
         y: 0,
-        duration: 2.5,
+        duration: 2,
         ease: 'power3.out',
         stagger: 0.2,
       }
@@ -31,7 +31,7 @@ export default function Banner() {
           duration: 2,
           ease: 'power3.out',
         },
-        '-=1.5'
+        '-=2.5'
       );
   }, []);
 

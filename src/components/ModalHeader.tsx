@@ -8,7 +8,7 @@ interface ModalHeaderProps {
 
 export default function ModalHeader({ project, onClose }: ModalHeaderProps) {
   return (
-    <div className="flex items-start justify-between px-6 py-4 bg-zinc-200">
+    <div className="flex items-start justify-between px-6 py-4 bg-gray-200">
       <div className="flex-col gap-5">
         <h1 className="text-xl font-bold tracking-tight">{project.title}</h1>
         <div className="text-[12px] font-sora flex flex-col gap-1 mt-3">
@@ -21,7 +21,7 @@ export default function ModalHeader({ project, onClose }: ModalHeaderProps) {
         </div>
         <div className="text-[12px] font-sora flex gap-3 mt-3">
           {project.github && (
-            <a href={project.github} className="flex gap-1 items-center">
+            <a href={project.github} className="flex gap-1 items-center" target="_blank">
               <svg className="w-4 h-4 fill-current text-gray-700">
                 <use href="/sprite.svg#github" />
               </svg>
@@ -29,7 +29,7 @@ export default function ModalHeader({ project, onClose }: ModalHeaderProps) {
             </a>
           )}
           {project.deployLink && (
-            <a href={project.deployLink} className="flex gap-2 items-center">
+            <a href={project.deployLink} className="flex gap-2 items-center" target="_blank">
               <svg className="w-3 h-3 fill-current text-gray-700">
                 <use href="/sprite.svg#ReadMore" />
               </svg>

@@ -1,6 +1,10 @@
+import { useRef } from 'react';
+import { Slides } from '@/types/project';
+
 interface ModalPaginationProps {
   currentSlide: number;
   totalSlides: number;
+  slides: Slides[];
   onPrev: () => void;
   onNext: () => void;
   onSelect: (index: number) => void;
@@ -8,42 +12,54 @@ interface ModalPaginationProps {
 
 export default function ModalPagination({
   currentSlide,
-  totalSlides,
-  onPrev,
-  onNext,
+  slides,
   onSelect,
 }: ModalPaginationProps) {
+  const tabRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    tabRef.current?.scrollBy({ left: -200, behavior: 'smooth' });
+  };
+
+  const scrollRight = () => {
+    tabRef.current?.scrollBy({ left: 200, behavior: 'smooth' });
+  };
+
   return (
-    <div className="flex items-center justify-between py-1 px-2 border-t border-gray-200">
+    <div className="flex items-center border-t border-gray-200 justify-between">
       <button
-        onClick={onPrev}
-        disabled={currentSlide === 0}
-        className="text-sm font-medium p-2 rounded-full transition disabled:opacity-30 disabled:cursor-not-allowed hover:bg-gray-100"
+        onClick={scrollLeft}
+        className="p-2 shrink-0 hover:bg-gray-100 transition"
       >
-        <svg className="w-6 h-6 fill-current text-white">
+        <svg className="w-4 h-4 fill-current text-gray-500">
           <use href="/sprite.svg#left" />
         </svg>
       </button>
 
-      <div className="flex items-center gap-2">
-        {Array.from({ length: totalSlides }).map((_, idx) => (
+      <div
+        ref={tabRef}
+        className="flex overflow-x-auto scrollbar-hide"
+      >
+        {slides.map((slide, idx) => (
           <button
             key={idx}
             onClick={() => onSelect(idx)}
-            aria-label={`${idx + 1}번 슬라이드로 이동`}
-            className={`w-2 h-2 rounded-full transition-all ${
-              idx === currentSlide ? 'bg-gray-900 w-5' : 'bg-gray-300'
+            className={`px-4 py-2.5 text-sm whitespace-nowrap transition border-b-2 ${
+              idx === currentSlide
+                ? 'border-gray-900 font-medium text-gray-900'
+                : 'border-transparent text-gray-400 hover:text-gray-600'
             }`}
-          />
+          >
+            {slide.title}
+          </button>
         ))}
       </div>
 
       <button
-        onClick={onNext}
-        disabled={currentSlide === totalSlides - 1}
-        className="text-sm p-1 rounded-full transition disabled:opacity-30 disabled:cursor-not-allowed hover:bg-gray-100"
+        onClick={scrollRight}
+        className="p-2 shrink-0 hover:bg-gray-100 transition"
       >
-        <svg className="w-6 h-6 fill-current text-white">
+        <svg className="w-4 h-4 fill-current text-gray-500">
           <use href="/sprite.svg#right" />
         </svg>
       </button>

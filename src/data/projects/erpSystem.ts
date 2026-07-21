@@ -1,5 +1,5 @@
 import { Project } from '@/types/project';
-import erpThumbnail from '@/assets/Project/taing.png';
+import erpThumbnail from '@/assets/Project/erpSystem.png';
 
 export const erpSystem: Project = {
   id: '1',
@@ -18,8 +18,6 @@ export const erpSystem: Project = {
     'Python',
   ],
   summary: 'Jira 티켓 관리와 온보딩을 위한 ERP 시스템',
-  github: '/',
-  deployLink: '/',
   features: [
     {
       title: '티켓 관리 대시보드',
@@ -133,13 +131,7 @@ export const erpSystem: Project = {
               '테이블 셀을 클릭하면 바로 입력 가능한 인라인 에디터로 전환. 수정·추가·삭제를 한 화면에서 처리',
           },
         },
-      ],
-    },
-    // 4 - 수행 업무 및 기여 - 사용자 등록 Jira 티켓 관리 페이지 2
-    {
-      id: 'slide-04',
-      title: '수행 업무 및 기여',
-      blocks: [
+        { type: 'divider' },
         {
           type: 'H2',
           text: '사용자 등록 Jira 티켓 관리 페이지',
@@ -151,7 +143,7 @@ export const erpSystem: Project = {
         },
         {
           type: 'paragraphBox',
-          icon: '🛠️',
+          icon: '⚡',
           paragraph: {
             title: 'React Query 캐싱',
             paragraph:
@@ -181,13 +173,7 @@ export const erpSystem: Project = {
             { label: 'Row B', sublabel: 'order: 2.0' },
           ],
         },
-      ],
-    },
-    // 5 - 수행 업무 및 기여 - 엑셀 자동 등록 Jira 티켓 관리 페이지 1
-    {
-      id: 'slide-05',
-      title: '수행 업무 및 기여',
-      blocks: [
+        { type: 'divider' },
         {
           type: 'H2',
           text: '엑셀 자동 등록 Jira 티켓 관리 페이지',
@@ -232,13 +218,7 @@ export const erpSystem: Project = {
             },
           ],
         },
-      ],
-    },
-    // 6 - 수행 업무 및 기여 - 엑셀 자동 등록 Jira 티켓 관리 페이지 2
-    {
-      id: 'slide-06',
-      title: '수행 업무 및 기여',
-      blocks: [
+        { type: 'divider' },
         {
           type: 'H2',
           text: '엑셀 자동 등록 Jira 티켓 관리 페이지',
@@ -250,7 +230,7 @@ export const erpSystem: Project = {
         },
         {
           type: 'paragraphBox',
-          icon: '/',
+          icon: '♾️',
           paragraph: {
             title: '무한 스크롤 - Lazy Loading',
             paragraph:
@@ -259,21 +239,15 @@ export const erpSystem: Project = {
         },
         {
           type: 'paragraphBox',
-          icon: '/',
+          icon: '✏️',
           paragraph: {
             title: '실시간 인라인 편집',
             paragraph:
               '테이블 셀을 클릭하면 바로 입력 가능한 인라인 에디터로 전환. 수정·추가·삭제를 한 화면에서 처리',
           },
         },
-      ],
-    },
-    // 7 - 수행 업무 및 기여 - 온보딩 가이드 페이지
-    {
-      id: 'slide-07',
-      title: '수행 업무 및 기여',
-      blocks: [
-        {
+        { type: 'divider' },
+         {
           type: 'H2',
           text: '온보딩 가이드 페이지',
         },
@@ -284,7 +258,7 @@ export const erpSystem: Project = {
         },
         {
           type: 'paragraphBox',
-          icon: '/',
+          icon: '🧱',
           paragraph: {
             title: '확장성 있는 JSON 기반 컴포넌트 렌더러 설계',
             paragraph:
@@ -293,7 +267,7 @@ export const erpSystem: Project = {
         },
         {
           type: 'paragraphBox',
-          icon: '/',
+          icon: '🧭',
           paragraph: {
             title: 'Breadcrumbs(탐색 경로)를 통한 사용자 경험(UX) 최적화',
             paragraph:
@@ -302,7 +276,7 @@ export const erpSystem: Project = {
         },
         {
           type: 'paragraphBox',
-          icon: '/',
+          icon: '🤖',
           paragraph: {
             title: '비개발 직군을 고려한 운영 효율화 및 안정성 확보',
             paragraph:
@@ -311,14 +285,18 @@ export const erpSystem: Project = {
         },
       ],
     },
-    // 8 - 트러블 슈팅
+
+    // 4 - 트러블 슈팅
     {
-      id: 'slide-08',
+      id: 'slide-04',
       title: '트러블 슈팅',
-      subTitle: '보안 환경에서의 데이터 수급 문제 해결',
       blocks: [
         {
           type: 'H2',
+          text: '보안 환경에서의 데이터 수급 문제 해결'
+        },
+        {
+          type: 'H3',
           text: '문제 정의',
         },
         {
@@ -326,7 +304,7 @@ export const erpSystem: Project = {
           text: 'Jira API 접근 및 크롤링이 사내 보안 문제로 불가능하여 엑셀 파싱 방식을 선택하였으나 역시 보안(DRM)이 걸려 데이터 파싱이 불가능한 상황.',
         },
         {
-          type: 'H2',
+          type: 'H3',
           text: '해결방법',
         },
         {
@@ -334,7 +312,7 @@ export const erpSystem: Project = {
           text: '1. 데이터 수급 방식의 한계를 인정하고 우회 경로 탐색.\n2. Python의 xlwings 라이브러리가 엑셀 프로세스를 직접 제어하여 보안 레이어를 통과할 수 있다는 점에 착안.\n3. 직접 보안 해제 로직을 코드로 구현하여 검증 후 백엔드 개발자에게 공유.',
         },
         {
-          type: 'H2',
+          type: 'H3',
           text: '결과',
         },
         {
@@ -361,16 +339,13 @@ export const erpSystem: Project = {
           type: 'image',
           src: 'src/assets/Project/erp/after.png',
         },
-      ],
-    },
-    // 9 - 트러블 슈팅 2
-    {
-      id: 'slide-09',
-      title: '트러블 슈팅',
-      subTitle: '데이터 업데이트 시 사용자 경험(UX) 저하 해결',
-      blocks: [
+        { type: 'divider' },
         {
           type: 'H2',
+          text: '데이터 업데이트 시 사용자 경험(UX) 저하 해결'
+        },
+        {
+          type: 'H3',
           text: '문제 정의',
         },
         {
@@ -378,7 +353,7 @@ export const erpSystem: Project = {
           text: 'Jira 티켓 수정 후 서버 데이터와 동기화하기 위해 invalidateQueries를 호출할 때, 테이블의 isLoading 상태가 true로 변하면서 데이터가 순간적으로 사라졌다 다시 나타나는 깜빡임 현상 발생. 이는 사용자 집중도를 흐트러뜨리고 서비스의 완성도를 낮춤.',
         },
         {
-          type: 'H2',
+          type: 'H3',
           text: '원인',
         },
         {
@@ -386,7 +361,7 @@ export const erpSystem: Project = {
           text: "React Query는 기본적으로 캐시된 데이터가 있더라도 invalidate 시 'stale' 상태로 판단하여 백그라운드에서 페칭을 시작하는데, 이때 UI 로직에서 isLoading을 사용하여 스피너를 보여주거나 빈 화면을 렌더링하도록 설정되어 있었기 때문.",
         },
         {
-          type: 'H2',
+          type: 'H3',
           text: '해결방법',
         },
         {
@@ -413,7 +388,7 @@ export const erpSystem: Project = {
         },
       ],
     },
-    // 10 - 회고
+    // 5 - 회고
     {
       id: 'slide-10',
       title: '회고 및 프로젝트 성과',
@@ -439,8 +414,8 @@ export const erpSystem: Project = {
           text: '• 기술적 제약에 부딪혔을 때 포기하지 않고, OS 레벨에서 엑셀을 제어하는 xlwings 라이브러리를 직접 서칭 및 제안하여 막혀있던 데이터 수급 문제를 창의적으로 해결했다.\n• react-table과 React Query의 캐싱 전략을 적절히 조합하여, 대용량 데이터를 다루면서도 화면 깜빡임이 없는 부드러운 사용자 경험을 제공했다.\n• 기획 단계부터 티켓 관리자 및 리더들의 리소스 관리 니즈를 파악하고, 역할 기반 권한 제어(RBAC)를 녹여내어 실무 중심의 대시보드를 완성했다.',
         },
         {
-          type: 'H3',
-          text: '프로젝트를 통해 배운 점',
+          type: 'H2',
+          text: '프로젝트 성과',
         },
         {
           type: 'paragraph',

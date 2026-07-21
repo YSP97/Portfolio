@@ -55,7 +55,7 @@ export const jaksimharu: Project = {
                         },
                         {
                             name: 'React-Helmet',
-                            icon: 'React-Helmet',
+                            icon: 'ReactHelmet',
                             description: 'React의 경우 메타 태그 설정이 어렵기 때문에 SEO와 메타 태그 관리를 위하여 사용'
                         },
                         {
@@ -96,18 +96,14 @@ export const jaksimharu: Project = {
                 blocks: [
                     {
                         type: 'image',
-                        src: 'src/assets/Project/jaksimharu/chat1.png'
-                    },
-                    {
-                        type: 'image',
-                        src: 'src/assets/Project/jaksimharu/chat2.png'
+                        src: 'src/assets/Project/jaksimharu/chat.png'
                     },
                     {
                         type: 'paragraphBox',
-                        icon: '/',
+                        icon: '💬',
                         paragraph: {
-                        title: '랜딩 페이지',
-                        paragraph: '• 헤더, 푸터, 앱 소개 섹션 프론트엔드\n • 앱 소개 섹션 애니메이션\n • 반응형 디자인'
+                        title: '채팅 페이지',
+                        paragraph: '• 프론트엔드\n• 사용자가 입장한 채팅방 리스트 렌더\n• WebSocket 프로토콜을 기반으로 하는 pocketbase의 subscribe를 활용한 단체 채팅 기능\n• 채팅방 나가기, 유저정보 확인 기능\n• 채팅 작성 시 스크롤 자동 내려가기\n• 채팅방 생성시 해당 스터디원 모집 게시글 정보 불러오기'
                         }
                     },
                     {
@@ -116,10 +112,10 @@ export const jaksimharu: Project = {
                     },
                     {
                         type: 'paragraphBox',
-                        icon: '/',
+                        icon: '🗺️',
                         paragraph: {
-                        title: '폼 작성 페이지',
-                        paragraph: '프론트엔드\n • DB를 활용한 CRUD(form 데이터)\n • form 데이터 상태관리(zustand store) \n• 커스텀 달력 제작 \n • 반응형 디자인'
+                        title: '내 근처 페이지',
+                        paragraph: '• 프론트엔드\n• 카카오맵 API를 통한 사용자 설정 위치 정보에 따른 근처 공부할만한 곳 추천 리스트 렌더링\n• 검색 기능을 통한 장소 검색 기능'
                         }
                     },
                     {
@@ -128,54 +124,50 @@ export const jaksimharu: Project = {
                     },
                     {
                         type: 'paragraphBox',
-                        icon: '/',
+                        icon: '🔒',
                         paragraph: {
-                        title: 'ETC',
-                        paragraph: '프론트엔드\n • DB를 활용한 CRUD(form 데이터)\n • form 데이터 상태관리(zustand store) \n• 커스텀 달력 제작 \n • 반응형 디자인'
+                        title: '로그인 페이지',
+                        paragraph: '• 프론트엔드\n• 로그인 유효성 검사\n• 로그인 조건 만족 시 로그인 버튼 활성화(default: 비활성화)\n• 로그인 기능'
                         }
                     },
                     {
                         type: 'image',
-                        src: 'src/assets/Project/jaksimharu/qna1.png'
-                    },
-                    {
-                        type: 'image',
-                        src: 'src/assets/Project/jaksimharu/qna2.png'
+                        src: 'src/assets/Project/jaksimharu/qna.png'
                     },
                     {
                         type: 'paragraphBox',
-                        icon: '/',
+                        icon: '✍️',
                         paragraph: {
-                        title: 'ETC',
-                        paragraph: '프론트엔드\n • DB를 활용한 CRUD(form 데이터)\n • form 데이터 상태관리(zustand store) \n• 커스텀 달력 제작 \n • 반응형 디자인'
+                        title: '질문 게시글 작성 페이지',
+                        paragraph: '• 프론트엔드\n• 이미지, 제목, 텍스트, 관심분야 게시 기능'
+                        }
+                    },
+                     {
+                        type: 'paragraphBox',
+                        icon: '🔍',
+                        paragraph: {
+                        title: '질문 상세 페이지, 수정',
+                        paragraph: '• 프론트엔드\n• 게시글 삭제, 수정\n • 댓글 기능(게시, 삭제, 수정)'
                         }
                     },
                     {
                         type: 'image',
-                        src: 'src/assets/Project/jaksimharu/mypage1.png'
-                    },
-                    {
-                        type: 'image',
-                        src: 'src/assets/Project/jaksimharu/mypage2.png'
-                    },
-                    {
-                        type: 'image',
-                        src: 'src/assets/Project/jaksimharu/mypage3.png'
+                        src: 'src/assets/Project/jaksimharu/mypage.png'
                     },
                     {
                         type: 'paragraphBox',
-                        icon: '/',
+                        icon: '👤',
                         paragraph: {
-                        title: 'ETC',
-                        paragraph: '프론트엔드\n • DB를 활용한 CRUD(form 데이터)\n • form 데이터 상태관리(zustand store) \n• 커스텀 달력 제작 \n • 반응형 디자인'
+                        title: '마이 페이지',
+                        paragraph: '• 프론트엔드\n• 프로필 정보 불러오기\n• 로그아웃 기능 구현\n• 프로필 정보 수정 구현'
                         }
                     },
                     {
                         type: 'paragraphBox',
-                        icon: '/',
+                        icon: '📁',
                         paragraph: {
                         title: 'ETC',
-                        paragraph: '프론트엔드\n • DB를 활용한 CRUD(form 데이터)\n • form 데이터 상태관리(zustand store) \n• 커스텀 달력 제작 \n • 반응형 디자인'
+                        paragraph: '• 조장 - 데일리 스크럼, 스프린트 회고 진행\n• github wiki, README.md 작성\n• 팀 컨벤션 및 규칙 정리 등 프로젝트 총괄\n• DB 설계\n• 회원가입 시 SMTP를 활용한 Email 인증 메일 전송'
                         }
                     },
 
@@ -189,6 +181,10 @@ export const jaksimharu: Project = {
                 blocks: [
                     {
                         type: 'H2',
+                        text: '페이지 이동·새로고침 시 상태 초기화 문제 해결 (Zustand Persist 활용)'
+                    },
+                    {
+                        type: 'H3',
                         text: '문제 정의'
                     },
                     {
@@ -196,7 +192,7 @@ export const jaksimharu: Project = {
                         text: '• 홈페이지 접근 → 게시판 페이지 접근 (정상적인 렌더링)\n • 다른 페이지 → 게시판 페이지 (정상적인 렌더링 X)\n • 새로고침 → 정상적인 렌더링 X'
                     },
                     {
-                        type: 'H2',
+                        type: 'H3',
                         text: '원인'
                     },
                     {
@@ -204,7 +200,7 @@ export const jaksimharu: Project = {
                         text: 'store로 관리되던 categories 상태의 경우 state가 새로고침하면 초기화 되기 때문에 카테고리 데이터가 초기화 되어 게시판 페이지의 게시글 렌더링이 정상적으로 이루어지지 않는 문제였다.'
                     },
                     {
-                        type: 'H2',
+                        type: 'H3',
                         text: '해결방법'
                     },
                     {
@@ -212,7 +208,7 @@ export const jaksimharu: Project = {
                         text: '• 글로벌 페이지(App.tsx)에서 상태 업데이트 되도록 수정 \n • 잦은 네트워크 요청 감소를 위해 zustand persist 적용하여 캐싱'
                     },
                     {
-                        type: 'H2',
+                        type: 'H3',
                         text: '기대효과'
                     },
                     {
@@ -222,16 +218,18 @@ export const jaksimharu: Project = {
                     {
                         type: 'image',
                         src: 'src/assets/Project/jaksimharu/trouble.png'
-                    }
-                        ]
                     },
-                    // 트러블 슈팅 2
                     {
-                id: 'slide-05',
-                title: '트러블 슈팅',
-                blocks: [
+                        type: 'paragraph',
+                        text: '\n'
+                    },
+                    { type: 'divider' },
                     {
                         type: 'H2',
+                        text: 'PocketBase 관계형 데이터(expand) 구조 불일치에 따른 렌더링 에러 개선'
+                    },
+                    {
+                        type: 'H3',
                         text: '문제 정의'
                     },
                     {
@@ -239,7 +237,7 @@ export const jaksimharu: Project = {
                         text: '댓글 렌더링을 하는 과정에서 user 데이터를 expand를 하는 경우 user을 reading 할 수 없다는 type error가 발생'
                     },
                     {
-                        type: 'H2',
+                        type: 'H3',
                         text: '원인'
                     },
                     {
@@ -247,7 +245,7 @@ export const jaksimharu: Project = {
                         text: '클라이언트에서 댓글 작성\n → 새로 생성된 데이터에 expand가 없음\n → 이 데이터로 상태 업데이트됨\n → 리렌더링을 할 때 replies에 expand가 없어서 typeError 발생'
                     },
                     {
-                        type: 'H2',
+                        type: 'H3',
                         text: '해결방법'
                     },
                     {
@@ -260,8 +258,9 @@ export const jaksimharu: Project = {
                     }
                         ]
                     },
+                    // 5 - 사용자 경험을 위해 한 노력
                     {
-                id: 'slide-06',
+                id: 'slide-05',
                 title: '사용자 경험을 위해 한 노력',
                 blocks: [
                     {
@@ -294,9 +293,9 @@ export const jaksimharu: Project = {
                     }
                         ]
                     },
-                    // 회고 및 프로젝트 성과
+                    // 6 - 회고 및 프로젝트 성과
                     {
-                        id: 'slide-07',
+                        id: 'slide-06',
                         title: '회고 및 프로젝트 성과',
                         blocks: [
                             {
@@ -331,6 +330,15 @@ export const jaksimharu: Project = {
                                 type: 'H3',
                                 text: '프로젝트 성과'
                             },
+                            {
+                                type: 'circleSummary',
+                                title: "'새로운 기술 스택의 학습 및 적용'",
+                                circles: [
+                                    '다양한  라이브러리 활용',
+                                    '다영한 api 활용',
+                                    '기획부터 개발까지의 프로젝트 경험',
+                                ],
+                                },
                             {
                                 type: 'paragraph',
                                 text: '• 다양한 라이브러리 활용\n• 다양한 api 활용\n• 기획부터 개발까지의 프로젝트 경험'

@@ -45,7 +45,8 @@ export type SlideBlock =
       type: 'circleSummary';
       title: string;
       circles: string[];
-    };
+    }
+  | { type: 'divider' };
 
 export interface StackItem {
   name: string;

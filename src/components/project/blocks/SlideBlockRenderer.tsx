@@ -19,7 +19,7 @@ export default function SlideBlockRenderer({ block }: SlideBlockRendererProps) {
 
     case 'H3':
       return (
-        <h3 className="text-md font-semibold text-gray-800 mt-3 mb-1">
+        <h3 className="text-[16px] font-bold text-gray-800 mt-3 mb-1">
           {block.text}
         </h3>
       );
@@ -48,6 +48,11 @@ export default function SlideBlockRenderer({ block }: SlideBlockRendererProps) {
 
     case 'circleSummary':
       return <SlideCircleSummary block={block} />;
+
+    case 'divider':
+      return <div className='py-6'>
+        <hr className="border border-gray-300 border-dashed" />
+      </div>;
 
     default:
       return null;

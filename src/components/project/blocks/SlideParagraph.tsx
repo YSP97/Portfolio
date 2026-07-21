@@ -15,10 +15,10 @@ export default function SlideParagraph({ block }: SlideParagraphProps) {
       <div>
         {isObject ? (
           <>
-            <h4 className="font-semibold text-sm mb-1">
+            <h4 className="font-semibold text-[16px] mb-1">
               {(block.paragraph as { title: string; paragraph: string }).title}
             </h4>
-            <p className="text-xs leading-relaxed">
+            <p className="text-[14px] leading-relaxed whitespace-pre-line">
               {
                 (block.paragraph as { title: string; paragraph: string })
                   .paragraph
@@ -26,7 +26,7 @@ export default function SlideParagraph({ block }: SlideParagraphProps) {
             </p>
           </>
         ) : (
-          <p className="text-xs leading-relaxed">{block.paragraph as string}</p>
+          <p className="text-xs leading-relaxed whitespace-pre-line">{block.paragraph as string}</p>
         )}
       </div>
     </div>

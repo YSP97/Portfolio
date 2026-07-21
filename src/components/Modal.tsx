@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import useModalStore from '@/stores/useModalStore.tsx';
 import { SlideBlockRenderer, ModalHeader, ModalPagination } from '@/components';
 import {
@@ -15,6 +15,11 @@ export default function Modal() {
   const slideRef = useRef<HTMLDivElement | null>(null);
 
   const [currentSlide, setCurrentSlide] = useState(0);
+
+
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [modalContent]);
 
   const slides = modalContent?.slides ?? [];
   const totalSlides = slides.length;
@@ -77,6 +82,7 @@ export default function Modal() {
                 onPrev={goToPrev}
                 onNext={goToNext}
                 onSelect={setCurrentSlide}
+                slides={slides}  
               />
             </>
           ) : (

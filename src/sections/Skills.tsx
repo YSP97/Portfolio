@@ -6,21 +6,20 @@ import { skillsData } from '@/data/skillsData.ts';
 export default function Skills() {
   const skillRefs = useRef<HTMLDivElement[]>([]);
   const sectionRef = useRef<HTMLDivElement | null>(null);
-
-  const tl = gsap.timeline({ delay: 1 });
+  const tl = useRef(gsap.timeline({ delay: 0.2 }));
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            tl.fromTo(
+            tl.current.fromTo(
               skillRefs.current,
               { opacity: 0, y: 30 },
               {
                 opacity: 1,
                 y: 0,
-                duration: 0.6,
+                duration: 0.3,
                 ease: 'power3.out',
                 stagger: 0.2,
               }

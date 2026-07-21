@@ -56,16 +56,16 @@ export default function Header() {
             <img src="/YSPlogo.svg" className="w-12" alt="logo" />
           </a>
           <div className="flex flex-row gap-8 max-md:hidden">
-            <Link to="about-me" smooth={true} duration={700}>
+            <Link to="about-me" smooth={true} duration={700} className='cursor-pointer'>
               About Me
             </Link>
-            <Link to="skills" smooth={true} duration={700}>
+            <Link to="skills" smooth={true} duration={700} className='cursor-pointer'>
               Skills
             </Link>
-            <Link to="project" smooth={true} duration={700}>
+            <Link to="project" smooth={true} duration={700} className='cursor-pointer'>
               Project
             </Link>
-            <Link to="contact-me" smooth={true} duration={700}>
+            <Link to="contact-me" smooth={true} duration={700} className='cursor-pointer'>
               Contact Me
             </Link>
           </div>
@@ -105,7 +105,7 @@ export default function Header() {
           to="about-me"
           smooth={true}
           duration={700}
-          className="text-lg font-semibold hover:underline"
+          className="text-lg font-semibold hover:underline cursor-pointer"
           onClick={() => setMenuOpen(false)}
         >
           About Me
@@ -114,7 +114,7 @@ export default function Header() {
           to="skills"
           smooth={true}
           duration={700}
-          className="text-lg font-semibold hover:underline"
+          className="text-lg font-semibold hover:underline cursor-pointer"
           onClick={() => setMenuOpen(false)}
         >
           Skills
@@ -123,7 +123,7 @@ export default function Header() {
           to="project"
           smooth={true}
           duration={700}
-          className="text-lg font-semibold hover:underline"
+          className="text-lg font-semibold hover:underline cursor-pointer"
           onClick={() => setMenuOpen(false)}
         >
           Project
@@ -132,7 +132,7 @@ export default function Header() {
           to="contact-me"
           smooth={true}
           duration={700}
-          className="text-lg font-semibold hover:underline"
+          className="text-lg font-semibold hover:underline cursor-pointer"
           onClick={() => setMenuOpen(false)}
         >
           Contact Me

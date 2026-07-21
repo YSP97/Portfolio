@@ -13,7 +13,7 @@ export const fitculator: Project = {
 
     ],
     github: 'https://github.com/YSP97/Team1_FE_B2C',
-    deployLink:'https://jaksim-haru.netlify.app/',
+    deployLink:'https://team1-fe-b2-c.vercel.app/',
     slides: [
         // 1. 사용 기술
         {
@@ -50,7 +50,7 @@ export const fitculator: Project = {
                         },
                         {
                             name: 'Motion one',
-                            icon: 'Motionone',
+                            icon: 'MotionOne',
                             description: '빠르고 가벼운 라이브러리로 CSS와 유사한 문법으로 사용하기 간편한 애니메이션 라이브러리라서 선택'
                         },
                         {
@@ -69,7 +69,7 @@ export const fitculator: Project = {
                 blocks: [
                     {
                         type: 'image',
-                        src: 'src/assets/Project/fitcultor/architecture.png',
+                        src: 'src/assets/Project/fitculator/architecture.png',
                         caption: '아키텍쳐'
                     },
                 ]
@@ -81,15 +81,11 @@ export const fitculator: Project = {
                 blocks: [
                     {
                         type: 'image',
-                        src: 'src/assets/Project/fitculator/landing1.png'
-                    },
-                    {
-                        type: 'image',
-                        src: 'src/assets/Project/fitculator/landing2.png'
+                        src: 'src/assets/Project/fitculator/landing.png'
                     },
                     {
                         type: 'paragraphBox',
-                        icon: '/',
+                        icon: '🏠',
                         paragraph: {
                         title: '랜딩 페이지',
                         paragraph: '• 헤더, 푸터, 앱 소개 섹션 프론트엔드\n • 앱 소개 섹션 애니메이션\n • 반응형 디자인'
@@ -100,23 +96,19 @@ export const fitculator: Project = {
                         src: 'src/assets/Project/fitculator/form.png'
                     },
                     {
-                        type: 'image',
-                        src: 'src/assets/Project/fitculator/form2.png'
-                    },
-                    {
                         type: 'paragraphBox',
-                        icon: '/',
+                        icon: '📝',
                         paragraph: {
                         title: '폼 작성 페이지',
-                        paragraph: '프론트엔드\n • DB를 활용한 CRUD(form 데이터)\n • form 데이터 상태관리(zustand store) \n• 커스텀 달력 제작 \n • 반응형 디자인'
+                        paragraph: '• 프론트엔드\n • DB를 활용한 CRUD(form 데이터)\n • form 데이터 상태관리(zustand store) \n• 커스텀 달력 제작 \n • 반응형 디자인'
                         }
                     },
                     {
                         type: 'paragraphBox',
-                        icon: '/',
+                        icon: '📁',
                         paragraph: {
                         title: 'ETC',
-                        paragraph: '프론트엔드\n • DB를 활용한 CRUD(form 데이터)\n • form 데이터 상태관리(zustand store) \n• 커스텀 달력 제작 \n • 반응형 디자인'
+                        paragraph: '• 프론트엔드\n• DB를 활용한 CRUD(form 데이터)\n• form 데이터 상태관리(zustand store) \n• 커스텀 달력 제작\n • 반응형 디자인'
                         }
                     },
 
@@ -212,6 +204,15 @@ export const fitculator: Project = {
                                 type: 'H3',
                                 text: '프로젝트 성과'
                             },
+                            {
+                                type: 'circleSummary',
+                                title: "'기획부터 회의에 참여하여 만들어간 개발 경험'",
+                                circles: [
+                                    '기획부터 디자인, 개발까지 다양한 협업, 개발 경험',
+                                    '최신 기술 스택활용',
+                                    '사용자의 지표데이터 추적 설계 경험',
+                                ],
+                                },
                             {
                                 type: 'H3',
                                 text: '개선할 점'

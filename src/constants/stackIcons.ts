@@ -53,4 +53,6 @@ export type AllStackName = StackName | SpriteName;
 
 export const SPRITE_ICON_MAP = {
   Zustand: 'icon-zustand',
+  MotionOne: 'motion-one',
+  ReactHelmet: 'react-helmet'
 } as const;
