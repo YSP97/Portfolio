@@ -134,7 +134,7 @@ export const fitculator: Project = {
                     },
                     {
                         type: 'paragraph',
-                        text: '컴포넌트 내부에서 document.addEventListener와 이벤트를 삭제하는 코드를 추가했더니 해당 에러가 발생하였는데, document가 서버에 존재하지 않은 상태에서 SSR이 되었기 때문에 발생'
+                        text: '컴포넌트 내부에서 document.addEventListener와 이벤트 제거하는 코드를 추가했는데 해당 코드가 렌더링 시점에 바로 실행되면서, document가 서버에 존재하지 않는 SSR 단계에서 에러 발생'
                     },
                     {
                         type: 'H2',
@@ -142,7 +142,7 @@ export const fitculator: Project = {
                     },
                     {
                         type: 'paragraph',
-                        text: '• 해당 함수를 useEffect 내부에서 정의 \n • 페이지 내에서 컴포넌트 import시 dynamic import를 적용 (ssr: false)'
+                        text: '브라우저 전용 API(document, window)를 사용하는 로직(IntersectionObserver, scroll 이벤트, 애니메이션 실행)을 전부 useEffect 내부로 이동 → 컴포넌트는 여전히 SSR로 렌더링되지만, 해당 로직만 하이드레이션 이후 브라우저에서 실행되도록 분리'
                     },
                     {
                         type: 'badge',
@@ -157,7 +157,7 @@ export const fitculator: Project = {
                     {
                         type: 'badge',
                         text: 'After',
-                        description: 'CSR',
+                        description: 'SSR + 하이드레이션 후 실행 (브라우저 API 접근을 useEffect로 지연)',
                         variant: 'after',
                         },
                     {
