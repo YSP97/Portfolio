@@ -157,7 +157,7 @@ export const fitculator: Project = {
                     {
                         type: 'badge',
                         text: 'After',
-                        description: 'SSR + 하이드레이션 후 실행 (브라우저 API 접근을 useEffect로 지연)',
+                        description: 'SSR + 하이드레이션 후 실행',
                         variant: 'after',
                         },
                     {
