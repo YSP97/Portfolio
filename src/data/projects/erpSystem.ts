@@ -37,9 +37,65 @@ export const erpSystem: Project = {
     },
   ],
   slides: [
-    // 1 - 사용기술
     {
       id: 'slide-01',
+      title: '기획의도 및 주요기능',
+      blocks: [
+        {
+          type: 'H2',
+          text: '기획의도'
+        },
+        {
+          type: 'paragraphBox',
+          icon: '📊',
+          paragraph:{
+            title: '수많은 Jira 티켓, 파편화된 데이터 접근',
+            paragraph: '팀원 전용 통합 대시보드 구축'
+          }
+        },
+        {
+          type: 'paragraphBox',
+          icon: '📃',
+          paragraph:{
+            title: '정적 문서로 존재하던 업무 매뉴얼',
+            paragraph: '온보딩 가이드 시스템 내 통합, 신규 입력 오류 최소화'
+          }},
+
+          {
+          type: 'paragraphBox',
+          icon: '⚙️',
+          paragraph:{
+            title: '티켓 데이터 수동 입력 반복',
+            paragraph: '엑셀 기반 운영 데이터 자동 수급 파이프라인'
+          }
+          
+        },
+        {
+          type: 'paragraphBox',
+          icon: '👨‍👩‍👧‍👦',
+          paragraph:{
+            title: '팀별 업무 부하 파악 어려움',
+            paragraph: '실시간 워크로드 기반 티켓 배정 관리자 기능'
+          },
+          
+        },
+        {
+          type: 'H2',
+          text: '주요 기능'
+        },
+        {
+          type: 'paragraphBox',
+          paragraph: {
+            title: '티켓 관리 대시보드',
+            paragraph: ''
+          }
+        }
+      ]
+
+    },
+    // 2 - 사용기술
+    {
+      id: 'slide-02',
       title: '사용 기술',
       blocks: [
         {
@@ -91,9 +147,9 @@ export const erpSystem: Project = {
         },
       ],
     },
-    // 2 - 아키텍쳐 & ERD
+    // 3 - 아키텍쳐 & ERD
     {
-      id: 'slide-02',
+      id: 'slide-03',
       title: '아키텍쳐 & ERD',
       blocks: [
         {
@@ -108,9 +164,9 @@ export const erpSystem: Project = {
         },
       ],
     },
-    // 3 - 수행 업무 및 기여 - 사용자 등록 Jira 티켓 관리 페이지 1
+    // 4 - 수행 업무 및 기여 - 사용자 등록 Jira 티켓 관리 페이지 1
     {
-      id: 'slide-03',
+      id: 'slide-04',
       title: '수행 업무 및 기여',
       blocks: [
         {
@@ -286,9 +342,9 @@ export const erpSystem: Project = {
       ],
     },
 
-    // 4 - 트러블 슈팅
+    // 5 - 트러블 슈팅
     {
-      id: 'slide-04',
+      id: 'slide-05',
       title: '트러블 슈팅',
       blocks: [
         {
@@ -388,9 +444,9 @@ export const erpSystem: Project = {
         },
       ],
     },
-    // 5 - 회고
+    // 6 - 회고
     {
-      id: 'slide-10',
+      id: 'slide-6',
       title: '회고 및 프로젝트 성과',
       blocks: [
         {

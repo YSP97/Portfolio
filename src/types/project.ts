@@ -55,7 +55,7 @@ export interface StackItem {
 }
 
 export interface ParagraphItem {
-  title: string;
+  title?: string;
   paragraph: string;
 }
 
