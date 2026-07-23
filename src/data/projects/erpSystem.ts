@@ -18,29 +18,15 @@ export const erpSystem: Project = {
     'Python',
   ],
   summary: 'Jira 티켓 관리와 온보딩을 위한 ERP 시스템',
-  features: [
-    {
-      title: '티켓 관리 대시보드',
-      items: [
-        '• 권한별 맞춤형 업무 뷰(관리자/팀원)',
-        '• 인터랙티브 데이터 핸들링',
-        '• 인원별 티켓 배정 및 상태 확인',
-      ],
-    },
-    {
-      title: '온보딩 가이드 시스템',
-      items: [
-        '• 업무 프로세스 & 매뉴얼 중앙 집중화',
-        '• 구조화된 데이터로 손쉬운 업데이트',
-        '• 인터랙티브 UI로 직관적 가이드 탐색',
-      ],
-    },
-  ],
   slides: [
     {
       id: 'slide-01',
-      title: '기획의도 및 주요기능',
+      title: '서비스 소개',
       blocks: [
+        {
+                    type: 'image',
+                    src: 'src/assets/Project/erpSystem.png'
+                },
         {
           type: 'H2',
           text: '기획의도'
@@ -87,7 +73,14 @@ export const erpSystem: Project = {
           type: 'paragraphBox',
           paragraph: {
             title: '티켓 관리 대시보드',
-            paragraph: ''
+            paragraph: '• 권한별 맞춤형 업무 뷰(관리자/팀원)\n• 인터랙티브 데이터 핸들링\n• 인원별 티켓 배정 및 상태 확인'
+          }
+        },
+        {
+          type: 'paragraphBox',
+          paragraph: {
+            title: '온보딩 가이드 시스템',
+            paragraph: '• 업무 프로세스 & 매뉴얼 중앙 집중화\n• 구조화된 데이터로 손쉬운 업데이트\n• 인터랙티브 UI로 직관적 가이드 탐색'
           }
         }
       ]
@@ -182,7 +175,7 @@ export const erpSystem: Project = {
           type: 'paragraphBox',
           icon: '📝',
           paragraph: {
-            title: '모달 기반 CRUD + 수정 `모드 전환',
+            title: '모달 기반 CRUD + 수정 모드 전환',
             paragraph:
               '테이블 셀을 클릭하면 바로 입력 가능한 인라인 에디터로 전환. 수정·추가·삭제를 한 화면에서 처리',
           },
@@ -250,6 +243,7 @@ export const erpSystem: Project = {
         },
         {
           type: 'flowChart',
+          title: '엑셀 업로드 및 데이터 자동화 파이프라인',
           items: [
             {
               label: '사용자',

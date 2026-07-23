@@ -9,15 +9,43 @@ export const jaksimharu: Project = {
     period: '2024년 8월 26일 - 2024년 9월 24일',
     summary: '우리동네 스터디원 구하기 플랫폼',
     techStack: ['React', 'TailwindCSS','React-Router-Dom', 'Zustand', 'Pocketbase', 'Vite', 'React-Helmet', 'Netlify','GSAP' ],
-    features: [
-        'a','b'
-    ],
     github: 'https://github.com/FRONTENDSCHOOL10/seven-11',
     deployLink:'https://jaksim-haru.netlify.app/',
     slides: [
-        // 1. 사용 기술
         {
             id: 'slide-01',
+            title: '서비스 소개',
+            blocks: [
+                {
+                    type: 'image',
+                    src: 'src/assets/Project/jacksimharu.png'
+                },
+                {
+          type: 'H2',
+          text: '기획의도'
+        },
+        {
+          type: 'paragraphBox',
+          icon: '📚',
+          paragraph:{
+            paragraph: '"작심하루"는 내가 원하는 지역에서 빠르게 스터디원을 구하는 모바일 전용 플랫폼입니다. 빠르고 쉽게 스터디를 만들거나 가입할 수 있도록 하기 위하여 기획되었습니다. 사용자 위치 근처 지도를 확인할 수 있도록 kakao map api를 통한 지도를 구현하고 스터디원 간의 빠른 피드백을 위하여 WebSocket 프로토콜을 기반으로 하는 pocketbase의 subscribe 기능을 활용하여 단체 채팅을 구현하는 것을 목표로 기획하였습니다.'
+          }
+        },
+        {
+          type: 'H2',
+          text: '주요 기능'
+        },
+        {
+          type: 'paragraphBox',
+          paragraph: {
+            paragraph: '• 우리 동네 스터디원 모집 게시판\n• 스터디원끼리의 그룹 채팅\n• 우리 동네 스터디 할 곳 찾기(지도)'
+          }
+        },
+            ]
+        },
+        // 2. 사용 기술
+        {
+            id: 'slide-02',
             title: '사용 기술',
             blocks: [
                 { 
@@ -72,9 +100,9 @@ export const jaksimharu: Project = {
                 }
             ]
         },
-        // 2. 아키텍쳐
+        // 3. 아키텍쳐
         {
-            id: 'slide-02',
+            id: 'slide-03',
                 title: '아키텍쳐 & ERD',
                 blocks: [
                     {
@@ -89,9 +117,9 @@ export const jaksimharu: Project = {
                     },
                 ]
         },
-        // 3. 수행업무 및 기여
+        // 4. 수행업무 및 기여
         {
-                id: 'slide-03',
+                id: 'slide-04',
                 title: '수행 업무 및 기여',
                 blocks: [
                     {
@@ -174,9 +202,9 @@ export const jaksimharu: Project = {
                 ]
                 
             },
-            // 4 - 트러블 슈팅
+            // 5 - 트러블 슈팅
             {
-                id: 'slide-04',
+                id: 'slide-05',
                 title: '트러블 슈팅',
                 blocks: [
                     {
@@ -258,9 +286,9 @@ export const jaksimharu: Project = {
                     }
                         ]
                     },
-                    // 5 - 사용자 경험을 위해 한 노력
+                    // 6 - 사용자 경험을 위해 한 노력
                     {
-                id: 'slide-05',
+                id: 'slide-06',
                 title: '사용자 경험을 위해 한 노력',
                 blocks: [
                     {
@@ -293,9 +321,9 @@ export const jaksimharu: Project = {
                     }
                         ]
                     },
-                    // 6 - 회고 및 프로젝트 성과
+                    // 7 - 회고 및 프로젝트 성과
                     {
-                        id: 'slide-06',
+                        id: 'slide-07',
                         title: '회고 및 프로젝트 성과',
                         blocks: [
                             {

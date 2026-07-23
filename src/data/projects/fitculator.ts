@@ -9,15 +9,45 @@ export const fitculator: Project = {
     period: '2025년 1월 31일 - 2025년 2월 28일',
     summary: '헬스케어 앱 서비스 Fitculator의 B2C 웹 페이지',
     techStack: ['Next.js', 'TailwindCSS','TypeScript', 'Zustand', 'Supabase', 'Motion one', 'Vercel' ],
-    features: [
-
-    ],
     github: 'https://github.com/YSP97/Team1_FE_B2C',
     deployLink:'https://team1-fe-b2-c.vercel.app/',
     slides: [
-        // 1. 사용 기술
         {
             id: 'slide-01',
+            title: '서비스 소개',
+            blocks: [
+                {
+                    type: 'image',
+                    src: 'src/assets/Project/fitculator.png'
+                },
+                {
+                    type: 'H2',
+                    text: '기획의도'
+                },
+                {
+                    type: 'paragraphBox',
+                    icon: '🏋️',
+                    paragraph: {
+                        paragraph: '헬스 케어 앱 서비스 Fitculator 의 B2C 웹 페이지입니다. Fitculator 는 그룹 피트니스를 이용하고자 하는 사용자에게 운동량을 계산해주고 올바른 운동 방향을 제시하기 위한 서비스로 해당 웹페이지는 어플리케이션 다운로드를 유도하기 위한 서비스 소개와 유료 서비스 가입을 위하여 기획되었습니다.'
+                    }
+
+                },
+                {
+                    type: 'H2',
+                    text: '주요기능'
+                },
+                {
+                    type: 'paragraphBox',
+                    paragraph: {
+                        paragraph: '• Fitculator 서비스 소개\n • 서비스 유료 회원 가입\n • 서비스 소개 애니메이션 효과'
+                    }
+
+                },
+            ]
+        },
+        // 2. 사용 기술
+        {
+            id: 'slide-02',
             title: '사용 기술',
             blocks: [
                 { 
@@ -62,9 +92,9 @@ export const fitculator: Project = {
                 }
             ]
         },
-        // 2. 아키텍쳐
+        // 3. 아키텍쳐
         {
-            id: 'slide-02',
+            id: 'slide-03',
                 title: '아키텍쳐',
                 blocks: [
                     {
@@ -74,9 +104,9 @@ export const fitculator: Project = {
                     },
                 ]
         },
-        // 3. 수행업무 및 기여
+        // 4. 수행업무 및 기여
         {
-                id: 'slide-03',
+                id: 'slide-04',
                 title: '수행 업무 및 기여',
                 blocks: [
                     {
@@ -115,9 +145,9 @@ export const fitculator: Project = {
                 ]
                 
             },
-            // 4 - 트러블 슈팅
+            // 5 - 트러블 슈팅
             {
-                id: 'slide-04',
+                id: 'slide-05',
                 title: '트러블 슈팅',
                 blocks: [
                     {
@@ -168,8 +198,9 @@ export const fitculator: Project = {
 
                         ]
                     },
+                    // 6 - 회고 및 프로젝트 성과
                     {
-                        id: 'slide-05',
+                        id: 'slide-06',
                         title: '회고 및 프로젝트 성과',
                         blocks: [
                             {

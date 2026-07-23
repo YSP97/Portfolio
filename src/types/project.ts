@@ -6,7 +6,6 @@ export interface Project {
   period: string;
   role: string;
   teamSize: string;
-  features: (string | Features)[];
   summary: string;
   thumbnail?: string;
   techStack: string[];
