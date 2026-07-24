@@ -3,7 +3,7 @@ import { Project } from "@/types/project";
 export const jaksimharu: Project = {
     id:'3',
     title: '작심하루',
-    thumbnail: 'src/assets/Project/jacksimharu.png',
+    thumbnail: '../../src/assets/Project/jacksimharu.png',
     role: '조장',
     teamSize: '프론트엔드 3인',
     period: '2024년 8월 26일 - 2024년 9월 24일',
@@ -18,7 +18,7 @@ export const jaksimharu: Project = {
             blocks: [
                 {
                     type: 'image',
-                    src: 'src/assets/Project/jacksimharu.png'
+                    src: '../../src/assets/Project/jacksimharu.png'
                 },
                 {
           type: 'H2',
@@ -107,12 +107,12 @@ export const jaksimharu: Project = {
                 blocks: [
                     {
                         type: 'image',
-                        src: 'src/assets/Project/jaksimharu/architecture.png',
+                        src: '../../src/assets/Project/jaksimharu/architecture.png',
                         caption: '아키텍쳐'
                     },
                     {
                         type: 'image',
-                        src: 'src/assets/Project/jaksimharu/erd.png',
+                        src: '../../src/assets/Project/jaksimharu/erd.png',
                         caption: 'ERD'
                     },
                 ]
@@ -124,7 +124,7 @@ export const jaksimharu: Project = {
                 blocks: [
                     {
                         type: 'image',
-                        src: 'src/assets/Project/jaksimharu/chat.png'
+                        src: '../../src/assets/Project/jaksimharu/chat.png'
                     },
                     {
                         type: 'paragraphBox',
@@ -136,7 +136,7 @@ export const jaksimharu: Project = {
                     },
                     {
                         type: 'image',
-                        src: 'src/assets/Project/jaksimharu/map.png'
+                        src: '../../src/assets/Project/jaksimharu/map.png'
                     },
                     {
                         type: 'paragraphBox',
@@ -148,7 +148,7 @@ export const jaksimharu: Project = {
                     },
                     {
                         type: 'image',
-                        src: 'src/assets/Project/jaksimharu/login.png'
+                        src: '../../src/assets/Project/jaksimharu/login.png'
                     },
                     {
                         type: 'paragraphBox',
@@ -160,7 +160,7 @@ export const jaksimharu: Project = {
                     },
                     {
                         type: 'image',
-                        src: 'src/assets/Project/jaksimharu/qna.png'
+                        src: '../../src/assets/Project/jaksimharu/qna.png'
                     },
                     {
                         type: 'paragraphBox',
@@ -180,7 +180,7 @@ export const jaksimharu: Project = {
                     },
                     {
                         type: 'image',
-                        src: 'src/assets/Project/jaksimharu/mypage.png'
+                        src: '../../src/assets/Project/jaksimharu/mypage.png'
                     },
                     {
                         type: 'paragraphBox',
@@ -245,7 +245,7 @@ export const jaksimharu: Project = {
                     },
                     {
                         type: 'image',
-                        src: 'src/assets/Project/jaksimharu/trouble.png'
+                        src: '../../src/assets/Project/jaksimharu/trouble.png'
                     },
                     {
                         type: 'paragraph',
@@ -282,7 +282,7 @@ export const jaksimharu: Project = {
                     },
                     {
                         type: 'image',
-                        src: 'src/assets/Project/jaksimharu/trouble2.png'
+                        src: '../../src/assets/Project/jaksimharu/trouble2.png'
                     }
                         ]
                     },
@@ -317,7 +317,7 @@ export const jaksimharu: Project = {
                     },
                     {
                         type: 'image',
-                        src: 'src/assets/Project/jaksimharu/lighthouse.png'
+                        src: '../../src/assets/Project/jaksimharu/lighthouse.png'
                     }
                         ]
                     },
