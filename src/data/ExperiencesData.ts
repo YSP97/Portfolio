@@ -1,9 +1,11 @@
 import { ExperienceItem } from "@/types/data";
+import ptkorea from '@/assets/Icon/ptkorea.png';
+import likelion from '@/assets/Icon/likelion.png';
 
 
 export const ExperiencesData: ExperienceItem[] = [
     {
-        icon: '../src/assets/Icon/ptkorea.png',
+        icon: ptkorea,
         name: 'PTKOREA',
         description: '웹 페이지 제작 및 QA, ERP 시스템 프론트엔드 개발 인턴',
         peroid: '2025년 5월 26일 - 2026년 2월 25일(9개월)',
@@ -15,7 +17,7 @@ export const ExperiencesData: ExperienceItem[] = [
         id: '01'
     },
     {
-        icon: '../src/assets/Icon/likelion.png',
+        icon: likelion,
         name: '샤이닝라이언',
         description: '헬스 케어 서비스 ‘Fitculator’ B2C 프론트엔드 개발 인턴',
         peroid: '2025년 1월 31일 - 2025년 2월 28일(1개월)',
@@ -29,7 +31,7 @@ export const ExperiencesData: ExperienceItem[] = [
         id: '02'
     },
     {
-        icon: '../src/assets/Icon/likelion.png',
+        icon: likelion,
         name: '멋쟁이사자처럼',
         description: '프론트엔드 스쿨 10기 수료',
         peroid: '2024년 4월 - 2024년 9월',
