@@ -9,21 +9,19 @@ export default function Skills() {
   const tl = useRef(gsap.timeline({ delay: 0.2 }));
 
   useEffect(() => {
+    gsap.set(skillRefs.current, { opacity: 0, y: 50 });
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            tl.current.fromTo(
-              skillRefs.current,
-              { opacity: 0, y: 30 },
-              {
-                opacity: 1,
-                y: 0,
-                duration: 0.3,
-                ease: 'power3.out',
-                stagger: 0.2,
-              }
-            );
+        if (entry.isIntersecting) {
+          gsap.to(skillRefs.current, {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            ease: 'power3.out',
+            stagger: 0.2,
+            delay: 0.2,
+          });
             observer.unobserve(entry.target);
           }
         });

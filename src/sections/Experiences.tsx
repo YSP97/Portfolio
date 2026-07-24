@@ -11,6 +11,7 @@ export default function Experiences() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    gsap.set(experienceRefs.current, { opacity: 0, y: 50 });
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
