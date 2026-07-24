@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import useContactStore from '../stores/useContactStore.tsx';
+import useContactStore from '@/stores/useContactStore.tsx';
 import { gsap } from 'gsap';
 
 export default function ContactModal() {
@@ -8,7 +8,6 @@ export default function ContactModal() {
 
   useEffect(() => {
     if (isOpen && modalRef.current) {
-      // 모달 애니메이션
       gsap.fromTo(
         modalRef.current,
         { opacity: 0, scale: 0.9 },

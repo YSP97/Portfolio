@@ -1,111 +1,95 @@
-import { useEffect, useRef } from 'react';
-import useModalStore from '../stores/useModalStore.tsx';
-import { gsap } from 'gsap';
-import Badge from './Badge.tsx';
+import { useEffect, useRef, useState } from 'react';
+import useModalStore from '@/stores/useModalStore.tsx';
+import { SlideBlockRenderer, ModalHeader, ModalPagination } from '@/components';
+import {
+  useBodyScrollLock,
+  useEscapeClose,
+  useModalAnimation,
+  useSlideTransition,
+} from '@/hooks';
 
 export default function Modal() {
   const { isOpen, closeModal, modalContent } = useModalStore();
-  const modalRef = useRef<HTMLDivElement | null>(null);
+  const modalOverlayRef = useRef<HTMLDivElement | null>(null);
+  const modalContentRef = useRef<HTMLDivElement | null>(null);
+  const slideRef = useRef<HTMLDivElement | null>(null);
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
 
   useEffect(() => {
-    if (isOpen && modalRef.current) {
-      gsap.fromTo(
-        modalRef.current,
-        { opacity: 0, scale: 0.9 },
-        { opacity: 1, scale: 1, duration: 1, ease: 'power3.out' }
-      );
-    }
-  }, [isOpen]);
+    setCurrentSlide(0);
+  }, [modalContent]);
+
+  const slides = modalContent?.slides ?? [];
+  const totalSlides = slides.length;
+
+  useBodyScrollLock(isOpen);
+  useEscapeClose(isOpen, closeModal);
+  useModalAnimation(isOpen, modalOverlayRef, modalContentRef, () =>
+    setCurrentSlide(0)
+  );
+  useSlideTransition(currentSlide, slideRef);
+
+  const goToPrev = () => setCurrentSlide((prev) => Math.max(prev - 1, 0));
+  const goToNext = () =>
+    setCurrentSlide((prev) => Math.min(prev + 1, totalSlides - 1));
 
   if (!isOpen || !modalContent) return null;
 
+  const slide = slides[currentSlide];
+
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 p-4">
+    <div
+      ref={modalOverlayRef}
+      className="fixed inset-0 flex items-center justify-center bg-black/70 z-50 p-4"
+      onClick={closeModal}
+    >
       <div
-        ref={modalRef}
-        className="bg-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row gap-6 max-w-[1000px] max-h-[90vh] overflow-y-auto"
+        ref={modalContentRef}
+        className="flex flex-col bg-white w-full max-w-6xl h-[85vh] shadow-2xl overflow-hidden rounded-lg"
+        onClick={(e) => e.stopPropagation()}
       >
-        <img
-          src={modalContent.thumnail}
-          alt={modalContent.title}
-          className="w-full md:w-1/2 h-auto rounded-lg object-cover"
-        />
+        <ModalHeader project={modalContent} onClose={closeModal} />
 
-        <div className="flex flex-col gap-4 w-full md:w-2/3">
-          {/* 프로젝트 제목 */}
-          <h2 className="text-2xl font-bold">{modalContent.title}</h2>
+        <div className="flex-1 overflow-hidden flex flex-col">
+          {totalSlides > 0 ? (
+            <>
+              <div ref={slideRef} className="flex-1 overflow-y-auto space-y-4">
+                <section className="p-10 space-y-4">
+                  <div className="border-b pb-2.5">
+                    <h2 className="text-xl font-extrabold mt-0.5">
+                      {slide.title}
+                    </h2>
+                    {slide.subTitle && (
+                      <p className="text-xs text-gray-600/90 font-medium mt-1">
+                        {slide.subTitle}
+                      </p>
+                    )}
+                  </div>
 
-          {/* 프로젝트 기간 */}
-          <div className="font-sora">{modalContent.period}</div>
+                  <div className="space-y-2">
+                    {slide.blocks.map((block, bIdx) => (
+                      <SlideBlockRenderer key={bIdx} block={block} />
+                    ))}
+                  </div>
+                </section>
+              </div>
 
-          {/* 역할 배지 */}
-          <div className="flex gap-2 flex-wrap">
-            {modalContent.role.map((role, index) => (
-              <Badge key={index} content={`#${role}`} />
-            ))}
-          </div>
-
-          {/* 설명 */}
-          <p className="text-gray-700">{modalContent.desc}</p>
-
-          {/* 스킬 섹션 */}
-          <div className="flex gap-2">
-            <Badge content="Skills" style="bg-black text-white h-fit" />
-            <div className="flex gap-2 flex-wrap">
-              {modalContent.skill.map((skill, index) => (
-                <Badge key={index} content={skill} />
-              ))}
-            </div>
-          </div>
-
-          {/* 링크 섹션 */}
-          <div className="flex gap-4 w-fit items-center">
-            {/* GitHub 링크 */}
-            <a
-              className="flex items-center justify-center w-10 h-10 rounded-full transition hover:text-zinc-500"
-              href={modalContent.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Github 링크"
-            >
-              <svg className="w-10 h-10">
-                <use href="/sprite.svg#github" />
-              </svg>
-            </a>
-            {/* 배포 링크 */}
-            <a
-              className="flex items-center justify-center w-10 h-10 bg-black hover:bg-zinc-500 rounded-full text-white transition"
-              href={modalContent.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="배포 링크"
-            >
-              <svg className="w-6 h-6">
-                <use href="/sprite.svg#ReadMore" />
-              </svg>
-            </a>
-            {/* 노션 링크 */}
-            <a
-              href={modalContent.detail}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Badge
-                content="상세 보기"
-                style="bg-zinc-100 border-[2px] border-black text-black"
+              <ModalPagination
+                currentSlide={currentSlide}
+                totalSlides={totalSlides}
+                onPrev={goToPrev}
+                onNext={goToNext}
+                onSelect={setCurrentSlide}
+                slides={slides}  
               />
-            </a>
-          </div>
-
-          {/* 닫기 버튼 */}
-          <div className="flex justify-end">
-            <button
-              onClick={closeModal}
-              className="bg-black text-white px-4 py-2 rounded hover:bg-zinc-500 transition"
-            >
-              Close
-            </button>
-          </div>
+            </>
+          ) : (
+            <p className="text-gray-500 text-sm text-center py-12">
+              상세 슬라이드 데이터가 없습니다.
+            </p>
+          )}
         </div>
       </div>
     </div>

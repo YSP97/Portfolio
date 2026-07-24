@@ -1,32 +1,30 @@
 import { Link } from 'react-scroll';
 import { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import supabase from '@/utils/supabase';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef(null);
-  const [resume, setResume] = useState(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const [resume, setResume] = useState('/assets/resume.pdf');
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
   };
 
   useEffect(() => {
-    const fetchResume = async () => {
-      try {
-        const { data: Profile, error } = await supabase
-          .from('Profile')
-          .select('resume');
-        setResume(Profile[0].resume);
-        if (error) throw error;
-      } catch (err) {
-        console.error('Fetch Error!: ', err.massage);
+    if (!menuOpen) return;
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
       }
     };
 
-    fetchResume();
-  }, []);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuOpen]);
 
   // GSAP 애니메이션 처리
   useEffect(() => {
@@ -52,30 +50,30 @@ export default function Header() {
   return (
     <div>
       {/* 헤더 */}
-      <div className="flex flex-row justify-between py-6 px-20 items-center bg-white max-md:px-4 max-md:py-4 max-lg:px-6">
+      <div className="flex flex-row justify-between py-6 px-20 items-center bg-white max-md:px-4 max-md:py-4 max-lg:px-6 text">
         <div className="flex flex-row gap-12 font-semibold select-none cursor-pointer">
           <a href="/">
             <img src="/YSPlogo.svg" className="w-12" alt="logo" />
           </a>
           <div className="flex flex-row gap-8 max-md:hidden">
-            <Link to="about-me" smooth={true} duration={700}>
+            <Link to="about-me" smooth={true} duration={700} className='cursor-pointer'>
               About Me
             </Link>
-            <Link to="skills" smooth={true} duration={700}>
+            <Link to="skills" smooth={true} duration={700} className='cursor-pointer'>
               Skills
             </Link>
-            <Link to="project" smooth={true} duration={700}>
+            <Link to="project" smooth={true} duration={700} className='cursor-pointer'>
               Project
             </Link>
-            <Link to="contact-me" smooth={true} duration={700}>
+            <Link to="contact-me" smooth={true} duration={700} className='cursor-pointer'>
               Contact Me
             </Link>
           </div>
         </div>
         <a
           href={resume}
-          download="resume.pdf"
-          className="flex flex-row items-center gap-2 bg-black text-white rounded py-2 px-4 hover:bg-zinc-600 max-md:hidden"
+          download="프론트엔드_박윤선_이력서.pdf"
+          className="flex flex-row items-center gap-2 bg-black text-white rounded py-2 px-4 hover:bg-zinc-600 cursor-pointer max-md:hidden"
           aria-label="이력서 다운로드"
           target="_blank"
           rel="noopener noreferrer"
@@ -107,7 +105,7 @@ export default function Header() {
           to="about-me"
           smooth={true}
           duration={700}
-          className="text-lg font-semibold hover:underline"
+          className="text-lg font-semibold hover:underline cursor-pointer"
           onClick={() => setMenuOpen(false)}
         >
           About Me
@@ -116,7 +114,7 @@ export default function Header() {
           to="skills"
           smooth={true}
           duration={700}
-          className="text-lg font-semibold hover:underline"
+          className="text-lg font-semibold hover:underline cursor-pointer"
           onClick={() => setMenuOpen(false)}
         >
           Skills
@@ -125,7 +123,7 @@ export default function Header() {
           to="project"
           smooth={true}
           duration={700}
-          className="text-lg font-semibold hover:underline"
+          className="text-lg font-semibold hover:underline cursor-pointer"
           onClick={() => setMenuOpen(false)}
         >
           Project
@@ -134,15 +132,15 @@ export default function Header() {
           to="contact-me"
           smooth={true}
           duration={700}
-          className="text-lg font-semibold hover:underline"
+          className="text-lg font-semibold hover:underline cursor-pointer"
           onClick={() => setMenuOpen(false)}
         >
           Contact Me
         </Link>
         <a
           href={resume}
-          download="resume.pdf"
-          className="text-lg font-semibold bg-black text-white rounded py-2 px-4 hover:bg-zinc-600"
+          download="프론트엔드_박윤선_이력서.pdf"
+          className="text-lg font-semibold bg-black text-white rounded py-2 px-4 hover:bg-zinc-600 cursor-pointer"
           aria-label="이력서 다운로드"
           onClick={() => setMenuOpen(false)}
           target="_blank"

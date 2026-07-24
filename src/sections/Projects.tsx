@@ -1,46 +1,31 @@
 import { useEffect, useState, useRef } from 'react';
-import Project from '../components/Project.tsx';
-import supabase from '../utils/supabase.ts';
+import { ProjectBox } from '@/components';
 import { gsap } from 'gsap';
+import { projectData } from '@/data/projectData';
+import { Project } from '@/types/project';
 
 export default function Projects() {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<Project[]>(projectData);
   const [error, setError] = useState(null);
   const projectRefs = useRef<HTMLDivElement[]>([]);
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
-  const tl = gsap.timeline({ delay: 1 });
-
   useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const { data, error } = await supabase
-          .from('project')
-          .select('*')
-          .order('count', { ascending: true });
-        if (error) throw error;
-        setProjects(data);
-      } catch (err) {
-        console.error('Fetch Error!:', err.message);
-        setError(err.message);
-      }
-    };
+    const tl = gsap.timeline();
 
-    fetchProjects();
-  }, []);
-
-  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            const targets = projectRefs.current.filter(Boolean);
+
             tl.fromTo(
-              projectRefs.current,
+              targets,
               { opacity: 0, y: 50 },
               {
                 opacity: 1,
                 y: 0,
-                duration: 3,
+                duration: 1.5,
                 ease: 'power3.out',
                 stagger: 0.2,
               }
@@ -49,7 +34,7 @@ export default function Projects() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {
@@ -67,20 +52,23 @@ export default function Projects() {
     <section
       ref={sectionRef}
       id="project"
-      className="bg-black text-white flex flex-col items-center py-[104px] px-[112px] gap-[20px] max-lg:px-[50px]"
+      className="bg-black flex flex-col items-center py-[104px] px-[112px] gap-[20px] max-lg:px-[50px]"
     >
-      <h1 className="font-sora text-5xl max-sm:flex max-sm:gap-2">
+      <h1 className="font-sora text-5xl max-sm:flex max-sm:gap-2 text-white">
         My <span className="font-extrabold">Project</span>
       </h1>
       {error && <p className="text-red-500">데이터가 존재하지 않아요.</p>}
       {projects.length > 0 ? (
         projects.map((project, index) => (
-          <Project
-            key={index}
-            index={index}
-            projectData={project}
-            ref={(el) => (projectRefs.current[index] = el!)}
-          />
+          <div key={project.id}>
+            <ProjectBox
+              index={index}
+              projectData={project}
+              ref={(el) => {
+                if (el) projectRefs.current[index] = el;
+              }}
+            />
+          </div>
         ))
       ) : (
         <p>Loading projects...</p>
