@@ -1,5 +1,6 @@
 import { Project } from '@/types/project';
 import erpThumbnail from '@/assets/Project/erpSystem.png';
+import { erpImages } from '@/assets/Project/erp';
 
 export const erpSystem: Project = {
   id: '1',
@@ -25,7 +26,7 @@ export const erpSystem: Project = {
       blocks: [
         {
                     type: 'image',
-                    src: '../../src/assets/Project/erpSystem.png'
+                    src: erpThumbnail
                 },
         {
           type: 'H2',
@@ -147,12 +148,12 @@ export const erpSystem: Project = {
       blocks: [
         {
           type: 'image',
-          src: '../../src/assets/Project/erp/architecture.png',
+          src: erpImages.architecture,
           caption: '아키텍쳐',
         },
         {
           type: 'image',
-          src: '../../src/assets/Project/erp/erd.png',
+          src: erpImages.erd,
           caption: 'ERD',
         },
       ],
@@ -168,7 +169,7 @@ export const erpSystem: Project = {
         },
         {
           type: 'image',
-          src: '../../src/assets/Project/erp/erp0.png',
+          src: erpImages.erp0,
           caption: '※ 실제 화면이 아닌 재구성한 와이어프레임 입니다.',
         },
         {
@@ -187,7 +188,7 @@ export const erpSystem: Project = {
         },
         {
           type: 'image',
-          src: '../../src/assets/Project/erp/erp1.png',
+          src: erpImages.erp1,
           caption: '※ 실제 화면이 아닌 재구성한 와이어프레임 입니다.',
         },
         {
@@ -229,7 +230,7 @@ export const erpSystem: Project = {
         },
         {
           type: 'image',
-          src: '../../src/assets/Project/erp/erp4.png',
+          src: erpImages.erp4,
           caption: '※ 실제 화면이 아닌 재구성한 와이어프레임 입니다.',
         },
         {
@@ -275,7 +276,7 @@ export const erpSystem: Project = {
         },
         {
           type: 'image',
-          src: '../../src/assets/Project/erp/erp5.png',
+          src: erpImages.erp5,
           caption: '※ 실제 화면이 아닌 재구성한 와이어프레임 입니다.',
         },
         {
@@ -303,7 +304,7 @@ export const erpSystem: Project = {
         },
         {
           type: 'image',
-          src: '../../src/assets/Project/erp/erp6.png',
+          src: erpImages.erp6,
           caption: '※ 실제 화면이 아닌 재구성한 와이어프레임 입니다.',
         },
         {
@@ -377,7 +378,7 @@ export const erpSystem: Project = {
         },
         {
           type: 'image',
-          src: '../../src/assets/Project/erp/before.png',
+          src: erpImages.before,
         },
         {
           type: 'badge',
@@ -387,7 +388,7 @@ export const erpSystem: Project = {
         },
         {
           type: 'image',
-          src: '../../src/assets/Project/erp/after.png',
+          src: erpImages.after,
         },
         { type: 'divider' },
         {
@@ -425,7 +426,7 @@ export const erpSystem: Project = {
         },
         {
           type: 'image',
-          src: '/../../src/assets/Project/erp/erp7.png',
+          src: erpImages.erp7,
         },
         {
           type: 'badge',
@@ -434,7 +435,7 @@ export const erpSystem: Project = {
         },
         {
           type: 'image',
-          src: '/../../src/assets/Project/erp/erp8.png',
+          src: erpImages.erp8,
         },
       ],
     },

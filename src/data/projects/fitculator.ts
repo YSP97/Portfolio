@@ -1,9 +1,10 @@
 import { Project } from "@/types/project";
+import { fitculatorImages } from "@/assets/Project/fitculator";
 
 export const fitculator: Project = {
     id:'2',
     title: 'Fitculator',
-    thumbnail: '../../src/assets/Project/fitculator.png',
+    thumbnail: fitculatorImages.thumbnail,
     role: '팀장',
     teamSize: '프론트엔드 4인',
     period: '2025년 1월 31일 - 2025년 2월 28일',
@@ -18,7 +19,7 @@ export const fitculator: Project = {
             blocks: [
                 {
                     type: 'image',
-                    src: '../../src/assets/Project/fitculator.png'
+                    src: fitculatorImages.thumbnail
                 },
                 {
                     type: 'H2',
@@ -99,7 +100,7 @@ export const fitculator: Project = {
                 blocks: [
                     {
                         type: 'image',
-                        src: '../../src/assets/Project/fitculator/architecture.png',
+                        src: fitculatorImages.architecture,
                         caption: '아키텍쳐'
                     },
                 ]
@@ -111,7 +112,7 @@ export const fitculator: Project = {
                 blocks: [
                     {
                         type: 'image',
-                        src: '../../src/assets/Project/fitculator/landing.png'
+                        src: fitculatorImages.landing
                     },
                     {
                         type: 'paragraphBox',
@@ -123,7 +124,7 @@ export const fitculator: Project = {
                     },
                     {
                         type: 'image',
-                        src: '../../src/assets/Project/fitculator/form.png'
+                        src: fitculatorImages.form
                     },
                     {
                         type: 'paragraphBox',
@@ -182,7 +183,7 @@ export const fitculator: Project = {
                         },
                     {
                         type: 'image',
-                        src: '../../src/assets/Project/fitculator/before.png'
+                        src: fitculatorImages.before
                     },
                     {
                         type: 'badge',
@@ -192,7 +193,7 @@ export const fitculator: Project = {
                         },
                     {
                         type: 'image',
-                        src: '../../src/assets/Project/fitculator/after.png'
+                        src: fitculatorImages.after
                     },
                     // 회고 및 프로젝트 성과
 
