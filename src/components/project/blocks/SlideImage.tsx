@@ -33,6 +33,7 @@ export default function SlideImage({ block }: SlideImageProps) {
             <img
               src={block.src}
               alt={block.caption || 'slide image'}
+              loading="lazy"
               className="max-h-[50vh] w-auto h-auto object-contain"
             />
           )}
