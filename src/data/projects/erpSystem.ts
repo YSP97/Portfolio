@@ -74,7 +74,7 @@ export const erpSystem: Project = {
           type: 'paragraphBox',
           paragraph: {
             title: '티켓 관리 대시보드',
-            paragraph: '• 권한별 맞춤형 업무 뷰(관리자/팀원)\n• 인터랙티브 데이터 핸들링\n• 인원별 티켓 배정 및 상태 확인'
+            paragraph: '• React Query 기반 서버 데이터 캐싱·동기화\n• 드롭다운을 통한 티켓 담당자 재배정 및 상태 관리\n• 엑셀 파일 업로드 기반 티켓 데이터 자동 파싱 및 DB 반영'
           }
         },
         {
@@ -120,10 +120,10 @@ export const erpSystem: Project = {
                 'Node.js 기반의 경량 백엔드 프레임워크로, REST API 설계가 직관적이고 유연한 미들웨어 구성이 가능하여 선택',
             },
             {
-              name: 'React-Router-Dom',
-              icon: 'Reactrouter',
+              name: 'React-Query',
+              icon: 'ReactQuery',
               description:
-                '소규모의 프로젝트에 손쉽게 데이터 베이스 관리가 가능하여 선택',
+                '서버 상태와 클라이언트 상태를 분리해서 관리하기 위해 도입',
             },
             {
               name: 'MySQL',
